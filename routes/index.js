@@ -4,7 +4,7 @@ const passport = require('passport');
 
 // Don't want a welcome/home page in this app
 router.get('/', function(req, res, next) {
-  res.redirect('/');
+  res.render('index');
 });
 
 // Google OAuth login route

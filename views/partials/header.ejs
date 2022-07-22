@@ -9,7 +9,12 @@
 </head>
 <body>
     <nav>
-        <a href="/">HOME LOGO</a>
+    <a href="/">Home Page</a>
+    <% if (user) { %>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
     </nav>
     <main>
     
