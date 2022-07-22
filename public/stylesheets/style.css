@@ -11,10 +11,37 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  height: 34px;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
   height: 34px;
 }
 
 .login img {
   height: 30px;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
 
