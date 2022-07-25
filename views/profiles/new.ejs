@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form action="/profiles/new" method="POST">
+<!-- <form action="/profiles/new" method="POST"> -->
     <!-- <input type="text" value="some_id" name="some_name" /> -->
     <section>
         <div>
@@ -8,20 +8,23 @@
         </div>
         <div>
             <div>
+            <form action="/profiles/instructors" method="POST">
                 <button>INSTRUCTOR</button>
                 <button>?</button>
-                <script></script>
+            </form>
             </div>
             <br>
             <div>
+            <form action="/profiles/students" method="POST">
                 <button>STUDENT</button>
                 <button>?</button>
+            </form>
             </div>
         </div>
     </section>
-</form>
+<!-- </form> -->
     <!-- <input type="submit" name="save" value="Save" form="formID" /> -->
-</form>
+
 
 <!-- <script onclick="instructor();" src="/javascripts/instructor.js"></script>
 <script onclick="student();" src="/javascripts/student.js"></script> -->

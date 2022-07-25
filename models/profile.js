@@ -6,6 +6,7 @@ const profileSchema = new Schema({
         type: String,
         match: /.{12,}/
     },
+    instructor: Boolean,
     location: String,
     instruments: [{type: Schema.Types.ObjectId, ref: 'Instruments'}],
     genres: [],

@@ -10,9 +10,10 @@ function newProfile(req, res) {
 }
 
 function create(req, res) {
-    var profile = new Profile
-    profile.save(function (err) {
-        if (err) return res.redirect('/profiles/new');
-        // res.redirect('/profiles');
-    })
+    console.log('hellow world')
+    // const profile = new Profile(req.body);
+    // profile.save(function (err) {
+    //     if (err) return res.redirect('/profiles/new');
+        res.render('profiles/instructors');
+    // })
 }
