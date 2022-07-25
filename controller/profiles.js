@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function newProfile(req, res) {
-    res.render('new');
+    res.render('/profiles/new');
 }
