@@ -5,5 +5,5 @@ function student() {
 student();
 
 module.exports = { 
-    student
+    student: student
 }
