@@ -13,13 +13,11 @@ function newProfile(req, res) {
 }
 
 function create(req, res) {
-    const instruments = Instrument.schema.path('instruments').enumValues;
-    const genres = Profile.schema.path('genres').enumValues;
-    if (req.body.student) {
-        res.res.direct('/profiles/students');
-    } else {
+    const instruments = Instrument.schema.path('name').enumValues;
+    Profile.find({ genres }, function (err, genres) {
         res.render('profiles/instructors', { instruments, genres });
-    }
+    })
 }
+
 
 

@@ -9,8 +9,8 @@ const profilesCtrl = require('../controller/profiles')
 router.get('/new', profilesCtrl.new);
 // POST /profiles/instructor - create functionality
 router.post('/instructors', profilesCtrl.create);
-// POST /profiles/student - create functionality
-router.post('/students', profilesCtrl.create);
+// // POST /profiles/student - create functionality
+// router.post('/students', profilesCtrl.create);
 
 
 module.exports = router;

@@ -22,15 +22,15 @@
                         </option>
                         <% }) %>
                 </section>
-                <!-- <label for="genres">Favorite Styles</label>
-            <input type="text" name="genres" form="form2">
-            <section id="genres" name="genres">
-                <% genres.forEach(function(genres, idx) { %>
-                    <option value="<%= genre %>" <%=idx===0 ? 'selected' : '' %>>
-                        <%= genre %>
-                    </option>
-                    <% }) %>
-            </section> -->
+                <label for="genres">Favorite Styles</label>
+                <input type="text" name="genres" form="form2">
+                <section id="genres" name="genres">
+                    <% genres.forEach(function(genres, idx) { %>
+                        <option value="<%= genre %>" <%=idx===0 ? 'selected' : '' %>>
+                            <%= genre %>
+                        </option>
+                        <% }) %>
+                </section>
                 <label for="budget">Budget</label>
                 <input type="number" name="budget" id="budget" min="1" step="any" form="form2">
                 <label for="available"></label>
