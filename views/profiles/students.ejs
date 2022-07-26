@@ -1,5 +1,41 @@
 <%- include('../partials/header') %>
 
-<h1>student</h1>
+<h1>Student</h1>
+
+<form class="profile-form" action="/profiles/student" method="POST">
+    <section>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" name="username">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter Location"
+                autocomplete="country-name">
+        </div>
+        <div>
+            <label for="needs">Instruments</label>
+            <input type="number" name="needs" min="1" max="3">
+            <section id="instruments" name="needs">
+                <% instruments.forEach(function(instrument, idx) { %>
+                    <option value="<%= instrument %>" <%=idx===0 ? 'selected' : '' %>>
+                        <%= instrument %>
+                    </option>
+                    <% }) %>
+            </section>
+            
+            <!-- <label for="genres">Favorite Styles</label>
+            <section id="genres" name="genres">
+                <% genres.forEach(function(genres, idx) { %>
+                    <option value="<%= genre %>" <%=idx===0 ? 'selected' : '' %>>
+                        <%= genre %>
+                    </option>
+                    <% }) %>
+            </section> -->
+            <label for="budget">Budget</label>
+            <input type="number" name="budget" id="budget" min="1" step="any">
+            <label for="available"></label>
+            <input id="available" type="datetime-local" name="availablity"  min="2" max="5">
+        </div>
+    </section>
+</form>
 
 <%- include('../partials/footer') %>

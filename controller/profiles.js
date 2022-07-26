@@ -14,7 +14,7 @@ function newProfile(req, res) {
 }
 
 function create(req, res) {
-    const instruments = Instrument.schema.path('instruments').enumValues;
+    const instruments = Instrument.schema.path('instruments').nameValues;
     res.render('profiles/instructors', { instruments, genres });
 }
 
