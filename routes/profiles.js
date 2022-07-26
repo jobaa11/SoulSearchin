@@ -8,7 +8,8 @@ const profilesCtrl = require('../controller/profiles')
 // GET /profiles/new (/new)
 router.get('/new', profilesCtrl.new);
 // POST /profiles/instructor - create functionality
-router.get('/instructors', profilesCtrl.show);
+router.get('/instructors', profilesCtrl.newAcc);
+router.get('/students', profilesCtrl.newAcc);
 // // POST /profiles/student - create functionality
 // router.post('/students', profilesCtrl.create);
 

@@ -2,10 +2,9 @@
 
     <h1>Student</h1>
 
-    <form id="form2" class="profile-form" action="/profiles/student" method="POST">
+    <form id="form2" class="profile-form" action="/profiles/students" method="POST">
         <section>
             <div>
-                <!-- <input type="hidden" name="student"> -->
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Enter your username" name="username" form="form2">
                 <label for="location">Location</label>
@@ -37,6 +36,7 @@
                 <input id="available" type="datetime-local" name="availablity" min="2" max="5" form="form2">
             </div>
         </section>
+        <input type="submit" value="Submit">
     </form>
 
     <%- include('../partials/footer') %>
