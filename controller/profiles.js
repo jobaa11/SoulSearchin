@@ -6,7 +6,6 @@ const Instrument = require('../models/instrument');
 module.exports = {
     new: newProfile,
     create,
-
 }
 
 function newProfile(req, res) {
@@ -14,8 +13,13 @@ function newProfile(req, res) {
 }
 
 function create(req, res) {
-    const instruments = Instrument.schema.path('instruments').nameValues;
-    res.render('profiles/instructors', { instruments, genres });
+    const instruments = Instrument.schema.path('instruments').enumValues;
+    const genres = Profile.schema.path('genres').enumValues;
+    if (req.body.student) {
+        res.res.direct('/profiles/students');
+    } else {
+        res.render('profiles/instructors', { instruments, genres });
+    }
 }
 
 

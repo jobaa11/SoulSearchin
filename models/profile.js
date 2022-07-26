@@ -16,6 +16,10 @@ const profileSchema = new Schema({
         type: String,
         match: /.{12,}/,
     },
+    student: {
+        type: Boolean,
+        default: false
+    },
     location: String,
     instruments: [{ type: Schema.Types.ObjectId, ref: 'Instruments' }],
     genres: [genreSchema],
