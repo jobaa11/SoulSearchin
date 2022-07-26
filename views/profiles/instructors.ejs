@@ -8,19 +8,33 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Enter your username" name="username">
                 <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter Location" autocomplete="country-name">
+                <input type="text" id="location" name="location" placeholder="Enter Location"
+                    autocomplete="country-name">
             </div>
             <div>
                 <label for="instruments">Instruments</label>
-                <section id="insturments" id="instruments">
+                <input type="number" name="instruments" min="1" max="3">
+                <section id="instruments" name="instruments">
                     <% instruments.forEach(function(instrument, idx) { %>
-                        <option value="<%= instrument %>" <%= idx === 0 ? 'selected' : ''%>>
+                        <option value="<%= instrument %>" <%=idx===0 ? 'selected' : '' %>>
                             <%= instrument %>
                         </option>
-                      <% }) %>
+                        <% }) %>
                 </section>
+                
+                <label for="genres">Styles Taught</label>
+                <section id="genres" name="genres">
+                    <% genres.forEach(function(genres, idx) { %>
+                        <option value="<%= genre %>" <%=idx===0 ? 'selected' : '' %>>
+                            <%= genre %>
+                        </option>
+                        <% }) %>
+                </section>
+                <label for="budget">Budget</label>
+                <input type="number" name="budget" id="budget" min="1" step="any">
+                <label for="available"></label>
+                <input id="available" type="datetime-local" name="availablity"  min="2" max="5">
             </div>
-            <!--For instruments, genres, budget, availablity -->
         </section>
     </form>
 
