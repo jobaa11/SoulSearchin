@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const needsSchema = new Schema({
-    wants: [{ type: Schema.Types.ObjectId, ref: 'Instruments' }],
+    wants: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
 }, {
     timestamps: true
 });
@@ -21,7 +21,7 @@ const profileSchema = new Schema({
         default: false
     },
     location: String,
-    instruments: [{ type: Schema.Types.ObjectId, ref: 'Instruments' }],
+    instruments: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
     genres: [genreSchema],
     budget: {
         type: Number,

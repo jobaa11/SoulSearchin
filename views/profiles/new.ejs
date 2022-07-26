@@ -6,20 +6,19 @@
         </div>
         <div>
             <div>
-                <% if (user) { %>
-                <form action="/profiles/instructors" method="POST">
-                    <button>INSTRUCTOR</button>
+
+                    <a href="/profiles/instructors"><button>INSTRUCTOR</button></a>
                     <button>?</button>
                 </form>
             </div>
             <br>
             <div>
-                <%} else {%>
-                <form action="/profiles/students" method="POST">
+                
+                    <a href="/profiles/instructors"><button>STUDENT</button></a>
                     <button>STUDENT</button>
                     <button>?</button>
                 </form>
-                <% } %>
+
             </div>
         </div>
     </section>

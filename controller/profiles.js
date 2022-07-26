@@ -5,18 +5,17 @@ const Instrument = require('../models/instrument');
 
 module.exports = {
     new: newProfile,
-    create,
+    show
 }
 
 function newProfile(req, res) {
     res.render('profiles/new');
 }
 
-function create(req, res) {
+function show(req, res) {
     const instruments = Instrument.schema.path('name').enumValues;
-    Profile.find({ genres }, function (err, genres) {
+    const genres = Profile.schema.path('genres.style').enumValues;
         res.render('profiles/instructors', { instruments, genres });
-    })
 }
 
 

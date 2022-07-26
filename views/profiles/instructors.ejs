@@ -8,32 +8,34 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Enter your username" name="username" form="from1">
                 <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter Location"
+                <input type="text" id="location" name="location" placeholder="Enter City/State"
                     autocomplete="country-name" form="form1">
             </div>
             <div>
                 <label for="instruments">Instruments</label>
-                <section id="instruments" name="instruments">
-                    <input id="instruments" type="number" name="instruments" min="1" max="3" form="form1">
-                    <% instruments.forEach(function(instrument, idx) { %>
-                        <option value="<%= instrument %>" <%=idx===0 ? 'selected' : '' %>>
-                            <%= instrument %>
-                        </option>
-                        <% }) %>
-                </section>
+                <input id="instruments" type="hidden" name="instruments" min="1" max="3" form="form1">
+                <select id="instruments" name="instruments">
+                    <option value="piano">Piano</option>
+                    <option value="guitar">Guitar</option>
+                    <option value="">Percussion</option>
+                    <option value="R">Bass</option>
+                    <option value="R">Saxophone</option>
+                    <option value="R">Trumpet</option>
+                </select>
 
                 <label for="genres">Styles Taught</label>
-                <section id="genres" name="genres">
-                    <input id="genres" type="hidden" form="form1">
-                    <% genres.forEach(function(genres, idx) { %>
-                        <option value="<%= genre %>" <%=idx===0 ? 'selected' : '' %>>
-                            <%= genre %>
-                        </option>
-                        <% }) %>
-                </section>
+                <input id="genres" type="hidden" form="form1">
+                <select id="genres" name="genres">
+                    <option value="">R&B</option>
+                    <option value="PG">Funk</option>
+                    <option value="PG-13">Jazz</option>
+                    <option value="R">Pop</option>
+                    <option value="R">Rock</option>
+                    <option value="R">Bossa Nova</option>
+                </select>
                 <label for="budget">Budget</label>
                 <input type="number" name="budget" id="budget" min="1" step="any" form="form1">
-                <label for="available"></label>
+                <label for="available">Availablity</label>
                 <input id="available" type="datetime-local" name="availablity" min="2" max="5" form="form1">
             </div>
         </section>
