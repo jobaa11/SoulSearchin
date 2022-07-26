@@ -6,17 +6,18 @@ const profileSchema = new Schema({
         type: String,
         match: /.{12,}/,
     },
-    profile: { type: Boolean, default: true },
     location: String,
     instruments: [{type: Schema.Types.ObjectId, ref: 'Instruments'}],
-    genres: [],
+    genres: [{type: Schema.Types.ObjectId, ref: 'Instruments'}],
     budget: {type: Number, 
         min: Number, 
         max: Number, 
         required: true
     },
     availability: String,
-    interest: []
+    interest: [],
+},{
+timestamps: true
 });
 
 module.exports = mongoose.model('Profile', profileSchema);

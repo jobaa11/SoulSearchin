@@ -1,18 +1,28 @@
 <%- include('../partials/header') %>
 
-<h1>instructor</h1>
+    <h1>Instructor</h1>
 
-<form class="profile-form" action="/profiles/instructors" method="POST">
-    <section>
-        <div>
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username" name="username">
-            <label for="instructor"></label>
-            <input type="text" id="instructor" name="instructor" autocomplete="off">
-        </div> <!-- for username, location-->
-        <div></div> <!--For instruments, genres, budget, availablity -->
-    </section>
-</form>
+    <form class="profile-form" action="/profiles/instructors" method="POST">
+        <section>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" name="username">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter Location" autocomplete="country-name">
+            </div>
+            <div>
+                <label for="instruments">Instruments</label>
+                <section id="insturments" id="instruments">
+                    <% instruments.forEach(function(instrument, idx) { %>
+                        <option value="<%= instrument %>" <%= idx === 0 ? 'selected' : ''%>>
+                            <%= instrument %>
+                        </option>
+                      <% }) %>
+                </section>
+            </div>
+            <!--For instruments, genres, budget, availablity -->
+        </section>
+    </form>
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

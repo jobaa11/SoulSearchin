@@ -1,8 +1,12 @@
 const Profile = require('../models/profile');
+const Instrument = require('../models/instrument');
+// const rootUrl = 'http://ziptasticapi.com/zipcode'
+
 
 module.exports = {
     new: newProfile,
-    create
+    create,
+
 }
 
 function newProfile(req, res) {
@@ -10,10 +14,9 @@ function newProfile(req, res) {
 }
 
 function create(req, res) {
-    req.
-    res.render('profiles/instructors');
-    // })
+    const instruments = Instrument.schema.path('instruments').enumValues;
+    const genres = Instrument.schema.path('genres').enumValues;
+    res.render('profiles/instructors', { instruments, genres });
 }
-// const profile = new Profile(req.body);
-// profile.save(function (err) {
-//     if (req.body.) return res.redirect('/profiles/new');
+
+
