@@ -4,22 +4,30 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
-    new: newProfile,
-    newAcc
+    newInstructor,
+    newStudent,
+    createInstructorProfile,
+    createStudentProfile
 }
 
-function newProfile(req, res) {
-    res.render('profiles/new');
+function newInstructor(req, res) {
+    res.render('profiles/new-instructor');
+}
+function newStudent(req, res) {
+    res.render('profiles/new-student');
 }
 
-function newAcc(req, res) {
-    const url = req.url;
-    if (url === '/profile/students') {
-        res.render('profile/students')
-    } else {
-        res.render('profiles/instructors');
-    }
+function createInstructorProfile(req, res) {
+    req.body.user = req.user._id;
+    req.body.isInstructor = true;
+    Profile.create(req.body, function(err, profile) {
+        res.redirect('/');
+    });
 }
-
-
-
+function createStudentProfile(req, res) {
+    req.body.user = req.user._id;
+    req.body.isInstructor = false;
+    Profile.create(req.body, function(err, profile) {
+        res.redirect('/');
+    });
+}

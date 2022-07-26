@@ -16,10 +16,7 @@ const profileSchema = new Schema({
         type: String,
         match: /.{12,}/,
     },
-    student: {
-        type: Boolean,
-        default: false
-    },
+    isInstructor: Boolean,
     location: String,
     instruments: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
     genres: [genreSchema],
@@ -32,7 +29,8 @@ const profileSchema = new Schema({
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },
     needs: [needsSchema],
     availability: String,
-    interest: [],
+    interest: String,
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true}
 }, {
     timestamps: true
 });

@@ -43,6 +43,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+
+const profileCheck = require('./config/profile-check');
+app.use(profileCheck);
+
 const isLoggedIn = require('./config/auth');
 
 

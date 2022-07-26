@@ -5,13 +5,14 @@ const profilesCtrl = require('../controller/profiles')
 
 
 
-// GET /profiles/new (/new)
-router.get('/new', profilesCtrl.new);
+// GET /profiles/new/instructor 
+router.get('/new/instructor', profilesCtrl.newInstructor)
+// GET /profiles/new/student 
+router.get('/new/student', profilesCtrl.newStudent)
 // POST /profiles/instructor - create functionality
-router.get('/instructors', profilesCtrl.newAcc);
-router.get('/students', profilesCtrl.newAcc);
-// // POST /profiles/student - create functionality
-// router.post('/students', profilesCtrl.create);
+router.post('/instructor', profilesCtrl.createInstructorProfile);
+router.post('/student', profilesCtrl.createStudentProfile);
+
 
 
 module.exports = router;
