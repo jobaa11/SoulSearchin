@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-    username: {
+    name: {
         type: String,
-        match: /.{12,}/
+        match: /.{12,}/,
     },
-    instructor: Boolean,
+    profile: { type: Boolean, default: true },
     location: String,
     instruments: [{type: Schema.Types.ObjectId, ref: 'Instruments'}],
     genres: [],

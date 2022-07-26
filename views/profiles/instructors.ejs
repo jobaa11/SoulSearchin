@@ -2,6 +2,28 @@
 
 <h1>instructor</h1>
 
-<!-- <form action="/profiles/instructors" method="POST"></form> -->
+<form class="profile-form" action="/profiles/instructors" method="POST">
+    <section>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" name="username">
+            <label for="instructor"></label>
+            <input type="text" id="instructor" name="instructor" autocomplete="off">
+        </div> <!-- for username, location-->
+        <div></div> <!--For instruments, genres, budget, availablity -->
+    </section>
+</form>
 
+<!-- FORM (FOR TEACH OR INSTRUCTOR)(COMMON APP REF)
+	SECTION
+		DIV (FOR TEXT CONTENT)
+			HI (SEARCH FOR THE PERFECT MATCH!)
+		DIV ( FOR ALL BUTTONS)
+			DIV (INSTRUCTOR)
+				BUTTON 
+				BUTTON (FOR QUESTION MARK)
+			DIV (STUDENT)
+				BUTTON
+				BUTTON (FOR QUESTION MARK)
+		DIV (ALREADY HAVE ACCOUNT HREF TO LOGIN -->
 <%- include('../partials/footer') %>
