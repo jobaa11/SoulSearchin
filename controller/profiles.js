@@ -21,13 +21,13 @@ function createInstructorProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = true;
     Profile.create(req.body, function(err, profile) {
-        res.redirect('/');
+        res.redirect('/profile/instructor');
     });
 }
 function createStudentProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = false;
     Profile.create(req.body, function(err, profile) {
-        res.redirect('/');
+        res.redirect('/profile/student');
     });
 }

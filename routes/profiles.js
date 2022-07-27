@@ -10,8 +10,8 @@ router.get('/new/instructor', profilesCtrl.newInstructor)
 // GET /profiles/new/student 
 router.get('/new/student', profilesCtrl.newStudent)
 // POST /profiles/instructor - create functionality
-router.post('/instructor', profilesCtrl.createInstructorProfile);
-router.post('/student', profilesCtrl.createStudentProfile);
+router.post('/new-instructor', profilesCtrl.createInstructorProfile);
+router.post('/new-student', profilesCtrl.createStudentProfile);
 
 
 
