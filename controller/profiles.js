@@ -11,10 +11,10 @@ module.exports = {
 }
 
 function newInstructor(req, res) {
-    res.render('profiles/new-instructor');
+    res.render('profiles/new/instructor');
 }
 function newStudent(req, res) {
-    res.render('profiles/new-student');
+    res.render('profiles/new/student');
 }
 
 function createInstructorProfile(req, res) {
