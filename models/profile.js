@@ -19,7 +19,7 @@ const profileSchema = new Schema({
     genres: [{ type: String, enum: ['R&B', 'FUNK', 'JAZZ', 'POP', 'ROCK', 'BOSSA NOVA'] }],
     budget: {
         type: Number,
-        min: 1,
+        // min: 1,
         required: true
     },
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },

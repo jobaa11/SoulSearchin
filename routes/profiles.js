@@ -14,6 +14,7 @@ router.get('/new/student', profilesCtrl.newStudent)
 router.post('/instructor', profilesCtrl.createInstructorProfile);
 // POST /profiles/student - create functionality
 router.post('/student', profilesCtrl.createStudentProfile);
+// GET /profiles/instructor - create functionality
 router.get('/instructor/:id', profilesCtrl.showInstructor)
 // GET /profiles/student - create functionality
 router.get('/student/:id', profilesCtrl.showInstructor)
