@@ -8,3 +8,4 @@ module.exports = {
 function index(req, res) {
     res.render('profiles/instructors/index');
 }
+

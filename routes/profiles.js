@@ -5,6 +5,7 @@ const profilesCtrl = require('../controller/profiles')
 
 
 
+router.get('/instructors/', profilesCtrl.index)
 // GET /profiles/new/instructor 
 router.get('/new/instructor', profilesCtrl.newInstructor)
 // GET /profiles/new/student 

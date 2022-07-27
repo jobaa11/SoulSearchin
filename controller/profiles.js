@@ -4,12 +4,17 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
+    index,
     newInstructor,
     newStudent,
     showInstructor,
     showStudent,
     createInstructorProfile,
     createStudentProfile
+}
+
+function index(req, res) {
+    res.render('profiles/instructors/index');
 }
 
 function newInstructor(req, res) {

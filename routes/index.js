@@ -7,6 +7,10 @@ const passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('landing');
 });
+router.get('/profiles/instructors', function(req, res) {
+  res.render('profiles/instructors/index');
+});
+
 
 
 
@@ -24,7 +28,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
+    successRedirect: '/profiles/instructors',
     failureRedirect: '/'
   }
 ));
