@@ -2,16 +2,24 @@
 
 <%- include('../../partials/instructor') %>
 
-<section id="show-page">
-    <div>Location: </div>
-    <div>ejs instructor location here</div>
-    <div>Bio: </div>
-    <div>EJS INSTRUCTOR BIO </div>
-    <div>Instruments </div>
-    <div>EJS INTRUMENTS HERE</div>
-    <div>genres </div>
-    <div>EJS GENRES</div>
-   
+<% if (user && profile) { %>
+<% profile.forEach(function(p) { %>
+    <section id="show-page">
+        <div><h1><%= p.title %></h1></div>
+        <div>Name: </div>
+        <div><%= p.nickname %></div>
+        <div>Location: </div>
+        <div><%= p.location %></div>
+        <div>Bio: </div>
+        <div><%= p.bio %></div>
+        <div>Instruments: </div>
+        <div><%= p.instruments %></div>
+        <div>Genres: </div>
+        <div><%= p.genres %></div>
+    </section>
+
+<% }); %>
+<% } %>
 
 
     <%- include('../../partials/nav-footer') %>

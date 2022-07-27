@@ -60,7 +60,7 @@ const isLoggedIn = require('./config/auth');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profiles', isLoggedIn, profilesRouter);
-app.use('/profiles', isLoggedIn, instructorsRouter);
+// app.use('/profiles', isLoggedIn, instructorsRouter);
 
 
 

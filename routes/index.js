@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const isLoggedIn = require('../config/auth');
+const Profile = require('../models/profile');
+const Instrument = require('../models/instrument');
 const passport = require('passport');
 
 
@@ -7,10 +10,16 @@ const passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('landing');
 });
-router.get('/profiles/instructors', function(req, res) {
-  res.render('profiles/instructors/index');
+router.get('/profiles/instructors', isLoggedIn, function(req, res) {
+  Profile.find({})
+  .populate('instruments') 
+  .exec(function(err, profile) {
+      res.render('profiles/instructors/index', 
+      { title: 'Instructors', 
+      profile
+     });
+  })
 });
-
 
 
 

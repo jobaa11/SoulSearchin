@@ -32,7 +32,7 @@ function createInstructorProfile(req, res) {
     req.body.isInstructor = true;
     Profile.create(req.body, function (err, profile) {
         if (err) return res.redirect('/profiles/instructor')
-        res.redirect('profiles/instructors/index');
+        res.redirect('profiles/instructors/');
         
     });
 }
@@ -50,7 +50,7 @@ function showInstructor(req, res) {
     Profile.findById(req.params.id)
     .populate('instruments')
     .exec(function(err, profile) {
-        res.render(`/instructor/${profile._id}`)
+        res.render(`profiles/instructors/${profile._id}`)
     })
 }
 
