@@ -1,0 +1,48 @@
+<%- include('../../partials/header') %>
+
+    <h1>Student</h1>
+
+    <form id="form2" class="create-student-profile" action="/profiles/student" method="POST">
+        <section>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" name="username" form="form2">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter Location"
+                    autocomplete="country-name" form="form2">
+            </div>
+            <div>
+                <label for="instruments">Instruments</label>
+                <select id="instruments" name="instruments" multiple size="3">
+                    <option value="Piano">Piano</option>
+                    <option value="Guitar">Guitar</option>
+                    <option value="Percussion">Percussion</option>
+                    <option value="Bass">Bass</option>
+                    <option value="Saxophone">Saxophone</option>
+                    <option value="Trumpet">Trumpet</option>
+                </select>
+                <label for="needs">What do you want to learn?</label>
+                <select id="needs" name="needs" multiple="multiples">
+                    <option value="Piano">Piano</option>
+                    <option value="Guitar">Guitar</option>
+                    <option value="Percussion">Percussion</option>
+                    <option value="Bass">Bass</option>
+                    <option value="Saxophone">Saxophone</option>
+                    <option value="Trumpet">Trumpet</option>
+                </select>
+                <label for="skillLevel">Skill Level</label>
+                <select id="skillLevel" name="skillLevel">
+                    <option value="Novice">Novice</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Virtuoso">Virtuoso</option>
+                </select>
+                <label for="interest">Interest</label>
+                <textarea name="interest" id="interest" cols="15" rows="2" placeholder="Place Interest Here"></textarea>
+            </div>
+        </section>
+        <input type="submit" value="Submit">
+    </form>
+
+    <%- include('../../partials/footer') %>
