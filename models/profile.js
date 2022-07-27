@@ -12,12 +12,12 @@ const genreSchema = new Schema({
 })
 
 const profileSchema = new Schema({
-    name: {
-        type: String,
-        match: /.{12,}/,
-    },
+    nickname: String,
     isInstructor: Boolean,
-    location: String,
+    location: { type:
+        String, required: true
+    },
+    bio: String,
     instruments: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
     genres: [genreSchema],
     budget: {

@@ -2,36 +2,36 @@
 
     <h1>Instructor</h1>
 
-    <form id="form1" class="create-instructor -profile" action="/profiles/instructor" method="POST">
+    <form id="form1" class="create-instructor-profile" action="/profiles/instructor" method="POST">
         <section>
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your username" name="username" form="from1">
+                <label for="nickname">Nickname</label>
+                <input type="text" id="nickname" placeholder="Enter your username" name="nickname" form="from1">
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" placeholder="Enter City/State"
-                    autocomplete="country-name" form="form1">
+                autocomplete="country-name" form="form1">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" cols="15" rows="10">Tell us about yourself</textarea>
             </div>
             <div>
                 <label for="instruments">Instruments</label>
-                <input id="instruments" type="hidden" name="instruments" min="1" max="3" form="form1">
-                <select id="instruments" name="instruments">
-                    <option value="">Piano</option>
-                    <option value="">Guitar</option>
-                    <option value="">Percussion</option>
-                    <option value="">Bass</option>
-                    <option value="">Saxophone</option>
-                    <option value="">Trumpet</option>
+                <select id="instruments" name="instruments" multiple="3">
+                    <option value="Piano">Piano</option>
+                    <option value="Guitar">Guitar</option>
+                    <option value="Percussion">Percussion</option>
+                    <option value="Bass">Bass</option>
+                    <option value="Saxophone">Saxophone</option>
+                    <option value="Trumpet">Trumpet</option>
                 </select>
 
                 <label for="genres">Styles Taught</label>
-                <input id="genres" type="hidden" form="form1">
                 <select id="genres" name="genres">
-                    <option value="">R&B</option>
-                    <option value="">Funk</option>
-                    <option value="-13">Jazz</option>
-                    <option value="">Pop</option>
-                    <option value="">Rock</option>
-                    <option value="">Bossa Nova</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Funk">Funk</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Bossa">Bossa Nova</option>
                 </select>
                 <label for="budget">Budget</label>
                 <input type="number" name="budget" id="budget" min="1" step="any" form="form1">

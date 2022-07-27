@@ -5,11 +5,13 @@
     <form id="form2" class="create-student-profile" action="/profiles/student" method="POST">
         <section>
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your username" name="username" form="form2">
+                <label for="nickname">Nickname</label>
+                <input type="text" id="nickname" placeholder="Enter your username" name="nickname" form="form2">
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" placeholder="Enter Location"
                     autocomplete="country-name" form="form2">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" cols="15" rows="10">Tell us about yourself</textarea>
             </div>
             <div>
                 <label for="instruments">Instruments</label>
@@ -42,7 +44,7 @@
                 <textarea name="interest" id="interest" cols="15" rows="2" placeholder="Place Interest Here"></textarea>
             </div>
         </section>
-        <input type="submit" value="Submit">
+        <input type="submit" value="submit">
     </form>
 
     <%- include('../../partials/footer') %>
