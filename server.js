@@ -38,14 +38,19 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
 });
 
-
 const profileCheck = require('./config/profile-check');
 app.use(profileCheck);
+
+app.use(function(req, res, next) {
+  res.locals.profile = req.profile;
+  next();
+});
 
 const isLoggedIn = require('./config/auth');
 

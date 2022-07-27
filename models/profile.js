@@ -7,9 +7,6 @@ const needsSchema = new Schema({
     timestamps: true
 });
 
-const genreSchema = new Schema({
-    style: { type: String, enum: ['R&B', 'FUNK', 'JAZZ', 'POP', 'ROCK', 'BOSSA NOVA'] }
-})
 
 const profileSchema = new Schema({
     nickname: String,
@@ -19,18 +16,19 @@ const profileSchema = new Schema({
     },
     bio: String,
     instruments: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
-    genres: [genreSchema],
+    genres: [{ type: String, enum: ['R&B', 'FUNK', 'JAZZ', 'POP', 'ROCK', 'BOSSA NOVA'] }],
     budget: {
         type: Number,
-        min: Number,
-        max: Number,
+        min: 1,
         required: true
     },
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },
     needs: [needsSchema],
     availability: String,
     interest: String,
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true}
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
+    chosenInstructors: [{ type: Schema.Types.ObjectId, ref: 'Instructor' }],
+
 }, {
     timestamps: true
 });

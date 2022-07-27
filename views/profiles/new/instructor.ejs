@@ -6,7 +6,7 @@
         <section>
             <div>
                 <label for="nickname">Nickname</label>
-                <input type="text" id="nickname" placeholder="Enter your username" name="nickname" form="from1">
+                <input type="text" id="nickname" placeholder="Enter your username" name="nickname">
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" placeholder="Enter City/State"
                 autocomplete="country-name" form="form1">
@@ -16,12 +16,9 @@
             <div>
                 <label for="instruments">Instruments</label>
                 <select id="instruments" name="instruments" multiple="3">
-                    <option value="Piano">Piano</option>
-                    <option value="Guitar">Guitar</option>
-                    <option value="Percussion">Percussion</option>
-                    <option value="Bass">Bass</option>
-                    <option value="Saxophone">Saxophone</option>
-                    <option value="Trumpet">Trumpet</option>
+                    <% instruments.forEach(function(i) { %>
+                        <option value="<%= i._id %>"><%= i.name %></option>
+                    <% }) %>
                 </select>
 
                 <label for="genres">Styles Taught</label>
@@ -34,9 +31,9 @@
                     <option value="Bossa">Bossa Nova</option>
                 </select>
                 <label for="budget">Budget</label>
-                <input type="number" name="budget" id="budget" min="1" step="any" form="form1">
+                <input type="number" name="budget" id="budget">
                 <label for="available">Availablity</label>
-                <input id="available" type="datetime-local" name="availablity" min="2" max="5" form="form1">
+                <input id="available" type="datetime-local" name="availablity" min="2" max="5" >
             </div>
         </section>
         <input type="submit" value="Submit">

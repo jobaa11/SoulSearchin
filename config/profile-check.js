@@ -1,12 +1,13 @@
 const Profile = require('../models/profile');
 
 module.exports = function (req, res, next) {
-  if (req.user && !req.url.startsWith('/profiles/')) {
+  if (!req.url.startsWith('/logout') && req.user && !req.url.startsWith('/profiles')) {
     Profile.findOne({ user: req.user._id }, function (err, profile) {
-      console.log('profile', profile);
-      if (!profile) return res.render('profiles/new')
+      if (!profile) return res.render('profiles/new', { profile: null });
+      req.profile = profile;
+      next();
     })
   } else {
-    next()
+    next();
   }
 };
