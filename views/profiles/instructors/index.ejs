@@ -17,9 +17,11 @@
         <div>Genres: </div>
         <div><%= p.genres %></div>
     </section>
-
-<% }); %>
-<% } %>
+    <% profile.forEach(function(i) { %>
+        <a href="/profiles/instructors/<%= i._id %>"><button>View Instructor Profile</button></a>
+    <% }) %>
+    <% }); %>
+    <% } %>
 
 
     <%- include('../../partials/nav-footer') %>

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const profilesCtrl = require('../controller/profiles')
 const isLoggedIn = require('../config/auth');
 const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
@@ -10,6 +11,7 @@ const passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('landing');
 });
+
 router.get('/profiles/instructors', isLoggedIn, function(req, res) {
   Profile.find({})
   .populate('instruments') 
@@ -20,6 +22,8 @@ router.get('/profiles/instructors', isLoggedIn, function(req, res) {
      });
   })
 });
+
+router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
 
 
 

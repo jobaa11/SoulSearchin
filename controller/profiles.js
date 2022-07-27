@@ -18,12 +18,12 @@ function index(req, res) {
 }
 
 function newInstructor(req, res) {
-    Instrument.find({}, function(err, instruments) {
+    Instrument.find({}, function (err, instruments) {
         res.render('profiles/new/instructor', { instruments });
     });
 }
 function newStudent(req, res) {
-    Instrument.find({}, function(err, instruments) {
+    Instrument.find({}, function (err, instruments) {
         res.render('profiles/new/student', { instruments });
     });
 }
@@ -33,7 +33,7 @@ function createInstructorProfile(req, res) {
     Profile.create(req.body, function (err, profile) {
         if (err) return res.redirect('/profiles/instructor')
         res.redirect('profiles/instructors/');
-        
+
     });
 }
 function createStudentProfile(req, res) {
@@ -47,12 +47,11 @@ function createStudentProfile(req, res) {
 }
 
 function showInstructor(req, res) {
-    Profile.findById(req.params.id)
-    .populate('instruments')
-    .exec(function(err, profile) {
-        res.render(`profiles/instructors/${profile._id}`)
+    Profile.findById(req.params.id, function (err, instructors) {
+        res.render(`profiles/instructors/${profile._id}`, { instructors })
     })
 }
+
 
 function showStudent(req, res) {
     Profile.findById(req.params.id)
