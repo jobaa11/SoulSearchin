@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const needsSchema = new Schema({
-    wants: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
-}, {
-    timestamps: true
-});
-
 
 const profileSchema = new Schema({
     nickname: String,
@@ -23,7 +17,7 @@ const profileSchema = new Schema({
         required: true
     },
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },
-    needs: [needsSchema],
+    needs: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
     availability: String,
     interest: String,
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
