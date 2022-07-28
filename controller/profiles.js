@@ -84,11 +84,11 @@ function update(req, res) {
         const profile = new Profile({});
         profile.chosenInstructors.push(req.params.id);
         // student.chosenInstructors.push(req.params.id);
-        console.log(req.params.id, student);
+        console.log(req.params.id, profile);
         profile.save((err) => {
             if (err) return res.redirect('/');
-            // res.redirect(`/profiles/students/${profile._id}`);
-            res.redirect('/profiles/students/home');
+            res.redirect(`/profiles/students/${profile._id}`);
+            // res.redirect('/profiles/students/home');
         });
     });
 }

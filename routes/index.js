@@ -9,8 +9,8 @@ const passport = require('passport');
 
 
 router.get('/', (req, res, next) => {
-    Profile.find({}, (err, profileDoc) => {
-        res.render('landing', { profileDoc });
+    Profile.find({}, (err, profile) => {
+        res.render('landing', { profile });
       });
   });
 router.get('/about', (req, res) => {
@@ -55,9 +55,9 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ), async (req, res, next) => {
     const profile = await Profile.findOne({ user: req.user._id });
-    console.log(profile, 'we are here', req.body)
+    console.log(profile, 'we are here',)
     if (!profile)
-      return res.redirect('/');
+      return res.redirect('/new');
     if (profile.isInstructor)
       return res.redirect('/profiles/instructor/home');
     if (!profile.isInstructor)
