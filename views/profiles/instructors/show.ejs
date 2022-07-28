@@ -2,8 +2,7 @@
 
     <%- include('../../partials/instructor') %>
 
-        <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=PUT" method="POST"
-            name="instructorId">
+        <form id="edit-form" action="/profiles/students/<% instructor._id %>?_method=PUT" method="POST">
             <section id="show-page">
                 <div>
                     <h1>
@@ -24,7 +23,12 @@
                 </div>
                 <div>Instruments: </div>
                 <div>
-                    <%= instructor.instruments %>
+                    <% instructor.instruments.forEach(function(i) { %>
+                        <div>
+                            <%= i.name %>
+                        </div>
+
+                        <% }) %>
                 </div>
                 <div>Genres: </div>
                 <div>
@@ -38,11 +42,12 @@
                 <div>
                     <%= instructor.availablity %>
                 </div>
+                <input type="hidden" name="chosenInstructors">
             </section>
 
             <button>HIRE ME</button>
         </form>
-        <a href="/profiles/instructors">More Instructors</a>
+        <a href="/profiles/student/home">More Instructors</a>
 
 
 

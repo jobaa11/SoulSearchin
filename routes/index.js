@@ -20,17 +20,17 @@ router.get('/contact', (req, res) => {
     res.render('contact');
   })
 
-router.get('/profiles/instructors', isLoggedIn, (req, res) => {
-    Profile.find({})
-      .populate('instruments')
-      .exec(function (err, profile) {
-        res.render('profiles/instructors/index',
-          {
-            title: 'Instructors',
-            profile
-          });
-      });
-  });
+// router.get('/profiles/instructors', isLoggedIn, (req, res) => {
+//     Profile.find({isInstructor: true})
+//       .populate('instruments')
+//       .exec(function (err, profile) {
+//         res.render('profiles/instructors/index',
+//           {
+//             title: 'Instructors',
+//             profile
+//           });
+//       });
+//   });
 
 router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
 
@@ -55,11 +55,14 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ), async (req, res, next) => {
     const profile = await Profile.findOne({ user: req.user._id });
+    console.log(profile, 'we are here', req.body)
     if (!profile)
       return res.redirect('/');
     if (profile.isInstructor)
-      return res.redirect('/');
-    res.redirect('/profiles/instructors');
+      return res.redirect('/profiles/instructor/home');
+    if (!profile.isInstructor)
+      return res.redirect('/profiles/student/home');
+      
   });
 
 

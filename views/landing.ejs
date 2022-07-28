@@ -1,40 +1,8 @@
 <%- include('./partials/header') %>
 
 
-    <% if (user) { %>
-        <% if (profile && profile.isInstructor) { %>
-            <section id="show-page">
-                <div>
-                    <h1>
-                        <%= profileDoc.title %>
-                    </h1>
-                </div>
-                <div>Name: </div>
-                <div>
-                    <%= profileDoc.nickname %>
-                </div>
-                <div>Location: </div>
-                <div>
-                    <%= profileDoc.location %>
-                </div>
-                <div>Bio: </div>
-                <div>
-                    <%= profileDoc.bio %>
-                </div>
-                <div>Instruments: </div>
-                <div>
-                    <%= profileDoc.instruments %>
-                </div>
-                <div>Genres: </div>
-                <div>
-                    <%= profileDoc.genres %>
-                </div>
-            </section>
 
-            <% } %>
-
-                <% } else { %>
-                    <a href="profiles/"><button>Create Profile</button></a>
-                    <% } %>
+                    <h1>WELCOME To SoulSearch</h1>
+                  
 
                         <%- include('./partials/footer') %>

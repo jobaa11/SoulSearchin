@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const instructorSchema = new Schema({
+    instructorId: { type: Schema.Types.ObjectId, ref: 'Profile' } 
+})
 
 const profileSchema = new Schema({
     nickname: String,
@@ -21,7 +24,7 @@ const profileSchema = new Schema({
     availability: String,
     interest: String,
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
-    chosenInstructors: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
+    chosenInstructors: [instructorSchema],
 
 }, {
     timestamps: true

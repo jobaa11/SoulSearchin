@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+
+    <% if (user) { %>
+        <% if (profile && profile.isInstructor) { %>
+            <section id="show-page">
+                <div>
+                    <h1>
+                        <%= profile.title %>
+                    </h1>
+                </div>
+                <div>Name: </div>
+                <div>
+                    <%= profile.nickname %>
+                </div>
+                <div>Location: </div>
+                <div>
+                    <%= profile.location %>
+                </div>
+                <div>Bio: </div>
+                <div>
+                    <%= profile.bio %>
+                </div>
+                <div>Instruments: </div>
+                <div>
+                    <%= profile.instruments %>
+                </div>
+                <div>Genres: </div>
+                <div>
+                    <%= profile.genres %>
+                </div>
+            </section>
+
+            <% } %>
+
+                <% } else { %>
+                    <a href="profiles/"><button>Create Profile</button></a>
+                    <% } %>
+
+                        <%- include('../partials/footer') %>
