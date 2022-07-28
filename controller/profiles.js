@@ -50,24 +50,26 @@ function createStudentProfile(req, res) {
 
 function showInstructor(req, res) {
     Profile.findById(req.params.id)
-        .populate('instruments').exec(function (err, instructor) {
-            res.render('profiles/instructors/show', { instructor })
-        })
+    .populate('instruments').exec(function (err, instructor) {
+        res.render('profiles/instructors/show', { instructor })
+    })
 }
 
 function showStudent(req, res) {
     Profile.findById(req.params.id)
-        .populate('instruments')
-        .exec(function (err, student) {
-            res.render('profiles/students/index', { student })
-        });
+    .populate('instruments')
+    .exec(function (err, student) {
+        res.render('profiles/students/index', { student })
+    });
 }
 
 function update(req, res) {
+    req.body.user = req.user._id;
     Profile.findById(req.params.id, (err, student) => {
         student.chosenInstructors.push(req.body.instructorId);
         student.save((err) => {
-            res.redirect(`profiles/students/${student._id}`, { student });
+            if (err) return res.redirect('/');
+            res.redirect(`/profiles/students/${req.params.id}`, { student });
         });
     });
 }

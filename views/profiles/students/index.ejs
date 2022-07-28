@@ -3,7 +3,7 @@
     <%- include('../../partials/student') %>
 
         <% if (user && profile) { %>
-            <% profile.forEach(function(p) { %>
+            <% student.forEach(function(p) { %>
                 <section id="show-page">
                     <div>
                         <h1>
@@ -43,6 +43,10 @@
                         <%= student.interest %>
                     </div>
                 </section>
-                <a href="/profiles/instructors">More Instructors</a>
+                <% }) %>
 
-                <%- include('../../partials/nav-footer') %>
+                    <% } %>
+
+                        <a href="/profiles/instructors">More Instructors</a>
+
+                        <%- include('../../partials/nav-footer') %>
