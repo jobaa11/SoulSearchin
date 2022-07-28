@@ -5,8 +5,7 @@ const profilesCtrl = require('../controller/profiles')
 
 
 
-router.get('/instructors/', profilesCtrl.index)
-// GET /profiles/new/instructor 
+
 router.get('/new/instructor', profilesCtrl.newInstructor)
 // GET /profiles/new/student 
 router.get('/new/student', profilesCtrl.newStudent)
@@ -19,6 +18,10 @@ router.post('/student', profilesCtrl.createStudentProfile);
 router.get('/instructor/:id', profilesCtrl.showInstructor)
 // GET /profiles/student - create functionality
 router.get('/student/:id', profilesCtrl.showInstructor)
+
+router.put('/student/:id', profilesCtrl.update);
+
+router.delete('/student/:id', profilesCtrl.delete);
 
 
 

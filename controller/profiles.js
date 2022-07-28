@@ -4,18 +4,17 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
-    index,
     newInstructor,
     newStudent,
     showInstructor,
     showStudent,
     createInstructorProfile,
-    createStudentProfile
+    createStudentProfile,
+    update,
+    delete: deleteMatch
 }
 
-function index(req, res) {
-    res.render('profiles/instructors/index');
-}
+
 
 function newInstructor(req, res) {
     Instrument.find({}, function (err, instruments) {
@@ -47,8 +46,8 @@ function createStudentProfile(req, res) {
 }
 
 function showInstructor(req, res) {
-    Profile.findById(req.params.id, function (err, instructors) {
-        res.render(`profiles/instructors/${profile._id}`, { instructors })
+    Profile.findById(req.params.id, function (err, instructor) {
+        res.render('profiles/instructors/show', { instructor })
     })
 }
 
@@ -61,3 +60,18 @@ function showStudent(req, res) {
         });
 }
 
+function update(req, res) {
+    Profile.findOneAndUpdate(req.params.id,
+        req.body,
+        { new: true },
+        function (err, student) {
+            res.redirect(`/students/${student._id}`);
+        }
+    );
+}
+
+function deleteMatch(req, res) {
+    Profile.findByIdAndDelete(req.params.id, function (err) {
+        res.redirect('/profiles/instructors');
+    });
+}

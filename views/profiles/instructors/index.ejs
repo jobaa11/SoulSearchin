@@ -1,21 +1,28 @@
 <%- include('../../partials/header-main') %>
 
-<%- include('../../partials/instructor') %>
+    <%- include('../../partials/instructor') %>
 
-<% if (user && profile) { %>
-<% profile.forEach(function(p) { %>
-    <section id="show-page">
-        <div><h1><%= p.title %></h1></div>
-        <div>Name: </div>
-        <div><%= p.nickname %></div>
-        <div>Location: </div>
-        <div><%= p.location %></div>
-    </section>
-    <% profile.forEach(function(i) { %>
-        <a href="/profiles/instructors/<%= i._id %>"><button>View Instructor Profile</button></a>
-    <% }) %>
-    <% }); %>
-    <% } %>
+        <% if (user && profile) { %>
+            <% profile.forEach(function(p) { %>
+                <section id="show-page">
+                    <div>
+                        <h1>
+                            <%= p.title %>
+                        </h1>
+                    </div>
+                    <div>Name: </div>
+                    <div>
+                        <%= p.nickname %>
+                    </div>
+                    <div>Location: </div>
+                    <div>
+                        <%= p.location %>
+                    </div>
+                </section>
+                <a href="/profiles/instructors/<%= p._id %>"><button>View Instructor Profile</button></a>
+                <% }) %>
+
+                    <% } %>
 
 
-    <%- include('../../partials/nav-footer') %>
+                        <%- include('../../partials/nav-footer') %>

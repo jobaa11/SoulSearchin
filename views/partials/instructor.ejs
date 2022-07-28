@@ -1,4 +1,3 @@
-
 <body>
     <div>
         <div>
@@ -8,9 +7,11 @@
                         <nav>
                             <div>
                                 <div>avi</div>
-                                <h2>
-                                    <%= profile.name %>
-                                </h2>
+                                <% if (user && profile) { %>
+                                    <h2>
+                                        <%= profile.name %>
+                                    </h2>
+                                    <% } %>
                             </div>
                             <div>
                                 <a href="">About</a>

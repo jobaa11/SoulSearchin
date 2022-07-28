@@ -1,5 +1,8 @@
 function student() {
-    alert('SIGN UP student')
+    setTimeout(function() {
+        alert('SIGN UP student');
+
+    }, onclick)
 }
 
 student();

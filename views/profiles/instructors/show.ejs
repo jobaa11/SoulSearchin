@@ -1,20 +1,39 @@
-<%- include('../partials/instructor') %>
+<%- include('../../partials/header-main') %>
+
+    <%- include('../../partials/instructor') %>
+
+        <form id="edit-form" action="/profiles/instructors?_method=PUT" method="POST">
+                    <section id="show-page">
+                        <div>
+                            <h1>
+                                <%= instructor.title %>
+                            </h1>
+                        </div>
+                        <div>Name: </div>
+                        <div>
+                            <%= instructor.nickname %>
+                        </div>
+                        <div>Location: </div>
+                        <div>
+                            <%= instructor.location %>
+                        </div>
+                        <div>Bio: </div>
+                        <div>
+                            <%= instructor.bio %>
+                        </div>
+                        <div>Instruments: </div>
+                        <div>
+                            <%= instructor.instruments %>
+                        </div>
+                        <div>Genres: </div>
+                        <div>
+                            <%= instructor.genres %>
+                        </div>
+                    </section>
+                
+        </form>
+        <button>HIRE ME</button>
 
 
-    <section id="show-page">
-        <div><h1><%= p.title %></h1></div>
-        <div>Name: </div>
-        <div><%= p.nickname %></div>
-        <div>Location: </div>
-        <div><%= p.location %></div>
-        <div>Bio: </div>
-        <div><%= p.bio %></div>
-        <div>Instruments: </div>
-        <div><%= p.instruments %></div>
-        <div>Genres: </div>
-        <div><%= p.genres %></div>
-    </section>
 
-
-
-    <%- include('../partials/nav-footer') %>
+        <%- include('../../partials/nav-footer') %>
