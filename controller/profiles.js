@@ -4,6 +4,7 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
+    newProfile,
     newInstructor,
     newStudent,
     showInstructor,
@@ -14,7 +15,9 @@ module.exports = {
     delete: deleteMatch
 }
 
-
+function newProfile(req, res) {
+    res.render('profiles/new');
+}
 
 function newInstructor(req, res) {
     Instrument.find({}, function (err, instruments) {
@@ -30,8 +33,8 @@ function createInstructorProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = true;
     Profile.create(req.body, function (err, profile) {
-        if (err) return res.redirect('/profiles/instructor')
-        res.redirect('profiles/instructors/');
+        if (err) return res.redirect('/profiles/new')
+        res.redirect('/profiles/instructors/');
 
     });
 }
@@ -40,7 +43,7 @@ function createStudentProfile(req, res) {
     req.body.interest = req.body.interest.toUpperCase();
     req.body.isInstructor = false;
     Profile.create(req.body, function (err, profile) {
-        if (err) return res.redirect('/profiles/student')
+        if (err) return res.redirect('/profiles/new')
         res.redirect('/');
     });
 }

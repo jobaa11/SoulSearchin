@@ -1,11 +1,11 @@
 document.getElementById('click').onclick =
-function textMe() {
-    alert('JUST KIDDING ' + " \uD83D\uDE00" )
-};
+    function textMe() {
+        alert('JUST KIDDING ' + " \uD83D\uDE00")
+    };
 
 
 textMe();
 
-module.exports = { 
+module.exports = {
     text: textMe
 }

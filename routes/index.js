@@ -9,13 +9,12 @@ const passport = require('passport');
 
 
 router.get('/', function (req, res, next) {
-  res.render('landing');
+  Profile.find({}, function(err, profileDoc) {
+    res.render('landing', { profileDoc });
+  })
 });
 router.get('/about', function(req, res) {
   res.render('about');
-})
-router.get('/support', function(req, res) {
-  res.render('support');
 })
 router.get('/contact', function(req, res) {
   res.render('contact');
