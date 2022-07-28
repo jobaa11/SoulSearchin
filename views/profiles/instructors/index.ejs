@@ -1,6 +1,6 @@
 <%- include('../../partials/header-main') %>
 
-    <%- include('../../partials/instructor') %>
+    <%- include('../../partials/student') %>
 
         <% if (user && profile) { %>
             <% profiles.forEach(function(p) { %>
@@ -24,5 +24,57 @@
 
                     <% } %>
 
+                        <% if (user && !profile.isInstructor) { %>
+                            <section id="show-page">
+                                <div>
+                                    <h1>
+                                        <%= profile.title %>
+                                    </h1>
+                                </div>
+                                <div>Name: </div>
+                                <div>
+                                    <%= profile.nickname %>
+                                </div>
+                                <div>Location: </div>
+                                <div>
+                                    <%= profile.location %>
+                                </div>
+                                <div>Bio: </div>
+                                <div>
+                                    <%= profile.bio %>
+                                </div>
+                                <div>Instruments: </div>
+                                <div>
+                                    <% profile.instruments.forEach(function(i) { %>
+                                        <div>
+                                            <%= i.name %>
+                                        </div>
+                
+                                        <% }) %>
+                                </div>
+                                <div>Genres: </div>
+                                <div>
+                                    <%= profile.genres %>
+                                </div>
+                                <div>Skill: </div>
+                                <div>
+                                    <%= profile.skillLevel %>
+                                </div>
+                                <div>Instructors: </div>
+                                <div>
+                                    <% profile.chosenInstructors.forEach(function(i) { %>
+                                        <div>
+                                            <%= i.name %>
+                                        </div>
+                
+                                        <% }) %>
+                                </div>
+                                <div>Interest: </div>
+                                <div>
+                                    <%= profile.interest %>
+                                </div>
+                            </section>
+                            <% } %>
 
-                        <%- include('../../partials/nav-footer') %>
+
+                                <%- include('../../partials/nav-footer') %>

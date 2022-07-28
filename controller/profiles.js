@@ -18,7 +18,7 @@ module.exports = {
 }
 
 function studentHome(req, res) {
-    Profile.find({ isInstructor: false }).populate('instruments').exec(function (err, profiles) {
+    Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {
             res.render('profiles/instructors/index', { title: 'Student', profiles });
         });
 }
@@ -81,13 +81,14 @@ function showStudent(req, res) {
 
 function update(req, res) {
     Profile.find({ user: req.user._id }, (err, student) => {
-        console.log(req.user._id, student)
-        // student.chosenInstructors = [];
-        // console.log(req.user._id, student)
-        student.chosenInstructors.push(req.params.id);
-        student.save((err) => {
+        const profile = new Profile({});
+        profile.chosenInstructors.push(req.params.id);
+        // student.chosenInstructors.push(req.params.id);
+        console.log(req.params.id, student);
+        profile.save((err) => {
             if (err) return res.redirect('/');
-            res.redirect(`/profiles/students/${student._id}`);
+            // res.redirect(`/profiles/students/${profile._id}`);
+            res.redirect('/profiles/students/home');
         });
     });
 }

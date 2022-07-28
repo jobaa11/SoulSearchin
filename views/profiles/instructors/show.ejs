@@ -2,7 +2,7 @@
 
     <%- include('../../partials/instructor') %>
 
-        <form id="edit-form" action="/profiles/students/<% instructor._id %>?_method=PUT" method="POST">
+        <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=PUT" method="POST">
             <section id="show-page">
                 <div>
                     <h1>
@@ -45,7 +45,7 @@
                 <input type="hidden" name="chosenInstructors">
             </section>
 
-            <button>HIRE ME</button>
+            <button type="submit">HIRE ME</button>
         </form>
         <a href="/profiles/student/home">More Instructors</a>
 

@@ -21,7 +21,7 @@ router.get('/instructor/:id', profilesCtrl.showInstructor)
 // GET /profiles/student - show S functionality
 router.get('/students/:id', profilesCtrl.showStudent)
 // PUT /student/:id update "student profile" functionality
-router.put('/students', profilesCtrl.update);
+router.put('/students/:id', profilesCtrl.update);
 // DELETE /student/:id delete functionality
 router.delete('/students/:id', profilesCtrl.delete);
 
