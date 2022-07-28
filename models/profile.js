@@ -21,7 +21,7 @@ const profileSchema = new Schema({
     availability: String,
     interest: String,
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
-    chosenInstructors: [{ type: Schema.Types.ObjectId, ref: 'Instructor' }],
+    chosenInstructors: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
 
 }, {
     timestamps: true

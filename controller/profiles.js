@@ -44,37 +44,37 @@ function createStudentProfile(req, res) {
     req.body.isInstructor = false;
     Profile.create(req.body, function (err, profile) {
         if (err) return res.redirect('/profiles/new')
-        res.redirect('/');
+        res.redirect('profiles/students');
     });
 }
 
 function showInstructor(req, res) {
-    Profile.findById(req.params.id, function (err, instructor) {
-        res.render('profiles/instructors/show', { instructor })
-    })
+    Profile.findById(req.params.id)
+        .populate('instruments').exec(function (err, instructor) {
+            res.render('profiles/instructors/show', { instructor })
+        })
 }
-
 
 function showStudent(req, res) {
     Profile.findById(req.params.id)
         .populate('instruments')
         .exec(function (err, student) {
-            res.render(`/student/${profile._id}`, { student })
+            res.render('profiles/students/index', { student })
         });
 }
 
 function update(req, res) {
-    Profile.findOneAndUpdate(req.params.id,
-        req.body,
-        { new: true },
-        function (err, student) {
-            res.redirect(`/students/${student._id}`);
-        }
-    );
+    Profile.findById(req.params.id, (err, student) => {
+        student.chosenInstructors.push(req.body.instructorId);
+        student.save((err) => {
+            res.redirect(`profiles/students/${student._id}`, { student });
+        });
+    });
 }
+
 
 function deleteMatch(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect('/profiles/instructors');
+        res.redirect(`profiles/students/${student._id}`);
     });
 }

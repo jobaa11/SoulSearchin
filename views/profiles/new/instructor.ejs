@@ -9,7 +9,7 @@
                 <input type="text" id="nickname" placeholder="Enter your username" name="nickname">
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" placeholder="Enter City/State"
-                autocomplete="country-name" form="form1">
+                    autocomplete="country-name" form="form1">
                 <label for="bio">Bio:</label>
                 <textarea id="bio" name="bio" cols="15" rows="10">Tell us about yourself</textarea>
             </div>
@@ -17,8 +17,10 @@
                 <label for="instruments">Instruments:</label>
                 <select id="instruments" name="instruments" multiple="3">
                     <% instruments.forEach(function(i) { %>
-                        <option value="<%= i._id %>"><%= i.name %></option>
-                    <% }) %>
+                        <option value="<%= i._id %>">
+                            <%= i.name %>
+                        </option>
+                        <% }) %>
                 </select>
 
                 <label for="genres">Styles Taught:</label>
@@ -33,7 +35,7 @@
                 <label for="budget">Budget:</label>
                 <input type="number" name="budget" id="budget">
                 <label for="available">Availablity:</label>
-                <input id="available" type="datetime-local" name="availablity" min="2" max="5" >
+                <input id="available" type="datetime-local" name="availablity" min="2" max="5">
             </div>
         </section>
         <input type="submit" value="Submit">

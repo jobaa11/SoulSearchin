@@ -12,17 +12,17 @@ router.get('/new/instructor', profilesCtrl.newInstructor)
 // GET /profiles/new/student new Student
 router.get('/new/student', profilesCtrl.newStudent)
 // POST /profiles/instructor - create Instructor functionality
-router.post('/instructor', profilesCtrl.createInstructorProfile);
+router.post('/instructors', profilesCtrl.createInstructorProfile);
 // POST /profiles/student - create Student functionality
-router.post('/student', profilesCtrl.createStudentProfile);
+router.post('/students', profilesCtrl.createStudentProfile);
 // GET /profiles/instructor - show Instructor functionality
 router.get('/instructor/:id', profilesCtrl.showInstructor)
 // GET /profiles/student - show S functionality
-router.get('/student/:id', profilesCtrl.showStudent)
+router.get('/students/:id', profilesCtrl.showStudent)
 // PUT /student/:id update "student profile" functionality
-router.put('/student/:id', profilesCtrl.update);
+router.put('/students/:id', profilesCtrl.update);
 // DELETE /student/:id delete functionality
-router.delete('/student/:id', profilesCtrl.delete);
+router.delete('/students/:id', profilesCtrl.delete);
 
 
 

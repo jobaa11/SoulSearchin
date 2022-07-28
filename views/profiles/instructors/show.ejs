@@ -2,37 +2,47 @@
 
     <%- include('../../partials/instructor') %>
 
-        <form id="edit-form" action="/profiles/instructors?_method=PUT" method="POST">
-                    <section id="show-page">
-                        <div>
-                            <h1>
-                                <%= instructor.title %>
-                            </h1>
-                        </div>
-                        <div>Name: </div>
-                        <div>
-                            <%= instructor.nickname %>
-                        </div>
-                        <div>Location: </div>
-                        <div>
-                            <%= instructor.location %>
-                        </div>
-                        <div>Bio: </div>
-                        <div>
-                            <%= instructor.bio %>
-                        </div>
-                        <div>Instruments: </div>
-                        <div>
-                            <%= instructor.instruments %>
-                        </div>
-                        <div>Genres: </div>
-                        <div>
-                            <%= instructor.genres %>
-                        </div>
-                    </section>
-                
+        <form id="edit-form" action="/profiles/students/<%= student._id %>?_method=PUT" method="POST"
+            name="instructorId">
+            <section id="show-page">
+                <div>
+                    <h1>
+                        <%= instructor.title %>
+                    </h1>
+                </div>
+                <div>Name: </div>
+                <div>
+                    <%= instructor.nickname %>
+                </div>
+                <div>Location: </div>
+                <div>
+                    <%= instructor.location %>
+                </div>
+                <div>Bio: </div>
+                <div>
+                    <%= instructor.bio %>
+                </div>
+                <div>Instruments: </div>
+                <div>
+                    <%= instructor.instruments %>
+                </div>
+                <div>Genres: </div>
+                <div>
+                    <%= instructor.genres %>
+                </div>
+                <div>Budget: </div>
+                <div>
+                    <%= instructor.budget %>
+                </div>
+                <div>Availablity: </div>
+                <div>
+                    <%= instructor.availablity %>
+                </div>
+            </section>
+
+            <button>HIRE ME</button>
         </form>
-        <button>HIRE ME</button>
+        <a href="/profiles/instructors">More Instructors</a>
 
 
 

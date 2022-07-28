@@ -1,0 +1,48 @@
+<%- include('../../partials/header-main') %>
+
+    <%- include('../../partials/student') %>
+
+        <% if (user && profile) { %>
+            <% profile.forEach(function(p) { %>
+                <section id="show-page">
+                    <div>
+                        <h1>
+                            <%= student.title %>
+                        </h1>
+                    </div>
+                    <div>Name: </div>
+                    <div>
+                        <%= student.nickname %>
+                    </div>
+                    <div>Location: </div>
+                    <div>
+                        <%= student.location %>
+                    </div>
+                    <div>Bio: </div>
+                    <div>
+                        <%= student.bio %>
+                    </div>
+                    <div>Instruments: </div>
+                    <div>
+                        <%= student.instruments %>
+                    </div>
+                    <div>Genres: </div>
+                    <div>
+                        <%= student.genres %>
+                    </div>
+                    <div>Skill: </div>
+                    <div>
+                        <%= student.skillLevel %>
+                    </div>
+                    <div>Instructors: </div>
+                    <div>
+                        <%= student.chosenInstructors %>
+                    </div>
+                    <div>Interest: </div>
+                    <div>
+                        <%= student.interest %>
+                    </div>
+                </section>
+                <a href="/profiles/instructors">More Instructors</a>
+
+                <%- include('../../partials/nav-footer') %>

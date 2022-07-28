@@ -41,7 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
@@ -49,7 +49,7 @@ app.use(function(req, res, next) {
 const profileCheck = require('./config/profile-check');
 app.use(profileCheck);
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.locals.profile = req.profile;
   next();
 });
@@ -65,12 +65,12 @@ app.use('/profiles', isLoggedIn, profilesRouter);
 
 
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 

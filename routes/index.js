@@ -8,29 +8,29 @@ const passport = require('passport');
 
 
 
-router.get('/', function (req, res, next) {
-  Profile.find({}, function(err, profileDoc) {
-    res.render('landing', { profileDoc });
+router.get('/', (req, res, next) => {
+    Profile.find({}, (err, profileDoc) => {
+        res.render('landing', { profileDoc });
+      });
+  });
+router.get('/about', (req, res) => {
+    res.render('about');
   })
-});
-router.get('/about', function(req, res) {
-  res.render('about');
-})
-router.get('/contact', function(req, res) {
-  res.render('contact');
-})
+router.get('/contact', (req, res) => {
+    res.render('contact');
+  })
 
-router.get('/profiles/instructors', isLoggedIn, function (req, res) {
-  Profile.find({})
-    .populate('instruments')
-    .exec(function (err, profile) {
-      res.render('profiles/instructors/index',
-        {
-          title: 'Instructors',
-          profile
-        });
-    })
-});
+router.get('/profiles/instructors', isLoggedIn, (req, res) => {
+    Profile.find({})
+      .populate('instruments')
+      .exec(function (err, profile) {
+        res.render('profiles/instructors/index',
+          {
+            title: 'Instructors',
+            profile
+          });
+      });
+  });
 
 router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
 
@@ -53,20 +53,21 @@ router.get('/oauth2callback', passport.authenticate(
   {
     failureRedirect: '/'
   }
-), async function (req, res, next) {
-  const profile = await Profile.findOne({user: req.user._id})
-  console.log('profile', profile)
-  if (!profile) return res.redirect('/')
-  if (profile.isInstructor) return res.redirect('/')
-  res.redirect('/profiles/instructors')
-});
+), async (req, res, next) => {
+    const profile = await Profile.findOne({ user: req.user._id });
+    if (!profile)
+      return res.redirect('/');
+    if (profile.isInstructor)
+      return res.redirect('/');
+    res.redirect('/profiles/instructors');
+  });
 
 
 // Logout route
-router.get('/logout', function (req, res) {
-  req.logout(function (err) {
-    res.redirect('/');
+router.get('/logout', (req, res) => {
+    req.logout((err) => {
+      res.redirect('/');
+    });
   });
-});
 
 module.exports = router;
