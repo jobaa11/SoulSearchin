@@ -43,7 +43,6 @@ function newStudent(req, res) {
     });
 }
 function createInstructorProfile(req, res) {
-    console.log(req.body)
     req.body.user = req.user._id;
     req.body.isInstructor = true;
     Profile.create(req.body, function (err, profile) {
@@ -54,7 +53,6 @@ function createInstructorProfile(req, res) {
     });
 }
 function createStudentProfile(req, res) {
-    console.log(req.body)
     req.body.user = req.user._id;
     req.body.isInstructor = false;
     Profile.create(req.body, function (err, profile) {
@@ -83,19 +81,17 @@ function update(req, res) {
     Profile.find({ user: req.user._id }, (err, student) => {
         const profile = new Profile({});
         profile.chosenInstructors.push(req.params.id);
-        // student.chosenInstructors.push(req.params.id);
-        console.log(req.params.id, profile);
+        console.log(profile);
         profile.save((err) => {
-            if (err) return res.redirect('/');
-            res.redirect(`/profiles/students/${profile._id}`);
-            // res.redirect('/profiles/students/home');
+            // res.redirect(`/profiles/student/${student._id}`);
+            res.redirect('/profiles/student/home');
         });
     });
 }
 
-
 function deleteMatch(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect(`profiles/students/${student._id}`);
+        // res.redirect(`profiles/student/${student._id}`);
+        res.redirect('/profiles/student/home');
     });
 }

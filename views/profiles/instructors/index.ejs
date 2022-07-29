@@ -46,27 +46,24 @@
                                 <div>Instruments: </div>
                                 <div>
                                     <% profile.instruments.forEach(function(i) { %>
-                                        <div>
-                                            <%= i.name %>
+                                    <div>
+                                            <%= i.instruments %>
                                         </div>
-                
                                         <% }) %>
-                                </div>
-                                <div>Genres: </div>
-                                <div>
-                                    <%= profile.genres %>
+
                                 </div>
                                 <div>Skill: </div>
                                 <div>
                                     <%= profile.skillLevel %>
                                 </div>
-                                <div>Instructors: </div>
+                                <!-- <div>Instructors: </div> -->
                                 <div>
                                     <% profile.chosenInstructors.forEach(function(i) { %>
                                         <div>
                                             <%= i.name %>
+                                                <button>FIRE!</button>
                                         </div>
-                
+
                                         <% }) %>
                                 </div>
                                 <div>Interest: </div>

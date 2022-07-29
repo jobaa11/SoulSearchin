@@ -2,7 +2,7 @@
 
     <%- include('../../partials/instructor') %>
 
-        <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=PUT" method="POST">
+        <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=DELETE" method="POST">
             <section id="show-page">
                 <div>
                     <h1>
@@ -36,16 +36,12 @@
                 </div>
                 <div>Budget: </div>
                 <div>
-                    <%= instructor.budget %>
-                </div>
-                <div>Availablity: </div>
-                <div>
-                    <%= instructor.availablity %>
+                    $<%= instructor.budget %>/HR
                 </div>
                 <input type="hidden" name="chosenInstructors">
             </section>
 
-            <button type="submit">HIRE ME</button>
+            <button type="submit">FIRE!</button>
         </form>
         <a href="/profiles/student/home">More Instructors</a>
 

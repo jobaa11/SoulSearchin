@@ -22,12 +22,19 @@
                     <%= profile.bio %>
                 </div>
                 <div>Instruments: </div>
-                <div>
-                    <%= profile.instruments %>
-                </div>
+                <% profile.instruments.forEach(function(i) { %>
+                    <div>
+                        <%= i.name %>
+                        
+                    </div>
+                <% }) %>
                 <div>Genres: </div>
                 <div>
                     <%= profile.genres %>
+                </div>
+                <div>Budget: </div>
+                <div>
+                    $<%= profile.budget %>/HR
                 </div>
             </section>
 
