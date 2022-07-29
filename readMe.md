@@ -11,7 +11,7 @@
 <img
   src="https://img.shields.io/badge/%40-joba--a--ja11-blue?style=flat&logo=Linkedin&logoColor=white"/>
 </a>
- <a href="https://www.linkedin.com/in/joba-a-ja11/">
+ <a href="https://github.com/jobaa11">
 <img
   src="https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white"/>
 </a> 
