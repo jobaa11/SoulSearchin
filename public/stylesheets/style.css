@@ -41,6 +41,13 @@ body {
   font: 16px;
 }
 
+#logo {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 button {
   font-size: 30px;
   color: #ffffff;
@@ -133,7 +140,7 @@ h2 {
 
 
 a {
-  color: #51595c;
+  color: #bbcacf;
 }
 
 button {
