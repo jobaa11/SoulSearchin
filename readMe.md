@@ -72,7 +72,7 @@ A screenshot of your app's landing page and any other screenshots of interest.
 
 <h2>:fire: Getting Started</h2>
 
-<!-- <h3>:calling: Instructions</h3>
+<h3>:calling: Instructions</h3>
 <details open>
   <summary>How to Create a Profile</summary>
   <ol>
@@ -84,7 +84,7 @@ A screenshot of your app's landing page and any other screenshots of interest.
     </li>
     <li>Click on the "FIRE" in the bottom-right corner to delete a instructor match.</li>
   </ol>
-</details> -->
+</details>
 
 
 <details>
