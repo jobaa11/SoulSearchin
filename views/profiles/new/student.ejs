@@ -7,7 +7,7 @@
             <div>
                 <label for="nickname">Nickname:</label>
                 <input type="text" id="nickname" placeholder="Enter your username" name="nickname" minlength="3"
-                    maxlength="12">
+                    maxlength="12" autocomplete="off">
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" placeholder="Enter Location"
                     autocomplete="country-name">
@@ -36,12 +36,10 @@
                     <option value="Novice">Novice</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                    <option value="Virtuoso">Virtuoso</option>
                 </select>
                 <label for="interest">Interest</label>
                 <textarea name="interest" id="interest" cols="15" rows="2" placeholder="Place Interest Here"></textarea>
-                <input type="number" name="budget">
+                <input hidden type="number" name="budget">
             </div>
         </section>
         <input type="submit" value="submit">
