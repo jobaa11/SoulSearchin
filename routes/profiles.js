@@ -17,14 +17,19 @@ router.post('/new/instructors', profilesCtrl.createInstructorProfile);
 // POST /profiles/student - create Student functionality
 router.post('/new/students', profilesCtrl.createStudentProfile);
 // GET /profiles/instructor - show Instructor functionality
-router.get('/instructor/:id', profilesCtrl.showInstructor)
+// router.get('/instructor/:id', profilesCtrl.showInstructor)
 // GET /profiles/student - show S functionality
 router.get('/students/:id', profilesCtrl.showStudent)
+// GET /:id/edit delete functionality
+router.get('/:id/edit', profilesCtrl.edit)
+// PUT /profiles/instructor/:id (update functionality)
+router.put('/instructor/:id', profilesCtrl.updateBio);
 // PUT /student/:id update "student profile" functionality
-router.put('/students/:id', profilesCtrl.update);
-// DELETE /student/:id delete functionality
-router.get('/edit', profilesCtrl.edit)
+// router.put('/students/:id', profilesCtrl.update);
+// DELETE /profiles/student/:id delete functionality
 router.delete('/students/:id', profilesCtrl.delete);
+//DELETE /profiles/student/:id
+router.delete('/student/:id', profilesCtrl.deleteStudent);
 
 
 

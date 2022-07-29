@@ -55,7 +55,6 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ), async (req, res, next) => {
     const profile = await Profile.findOne({ user: req.user._id });
-    console.log(profile, 'we are here',)
     if (!profile)
       return res.redirect('/new');
     if (profile.isInstructor)

@@ -1,0 +1,12 @@
+<%- include('../../partials/header') %>
+
+    
+    <form action="/profiles/instructor/<%= user._id %>?_method=PUT" method="POST">
+        <label for="bio">BIO</label>
+        <textarea name="bio" id="bio" cols="30" rows="10">EDIT BIO</textarea>
+        <button type="submit">UPDATE</button>
+    </form>
+
+
+
+    <%- include('../../partials/footer') %>
