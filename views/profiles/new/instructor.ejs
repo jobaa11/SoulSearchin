@@ -3,8 +3,8 @@
     <h1>Instructor</h1>
 
     <form id="form1" class="create-instructor-profile" action="/profiles/new/instructors" method="POST">
-        <section>
-            <div>
+        <section class="allapp">
+            <div class="topapp">
                 <label for="nickname">Nickname:</label>
                 <input type="text" id="nickname" placeholder="Enter your username" name="nickname" autocomplete="off" autocapitalize="words">
                 <label for="location">Location:</label>
@@ -13,7 +13,7 @@
                 <label for="bio">Bio:</label>
                 <textarea autocapitalize="sentences" id="bio" name="bio" cols="15" rows="10">Tell us about yourself</textarea>
             </div>
-            <div>
+            <div class="bottomapp">
                 <label for="instruments">Instruments:</label>
                 <select id="instruments" name="instruments" multiple="3">
                     <% instruments.forEach(function(i) { %>
