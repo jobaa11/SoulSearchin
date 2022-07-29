@@ -15,7 +15,6 @@
 <img
   src="https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white"/>
 </a> 
-https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white
 
 <h1>:pencil: Description</h1>
 
