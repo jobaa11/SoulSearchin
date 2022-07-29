@@ -4,6 +4,7 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
+    updateBio,
     studentHome,
     instructorHome,
     newProfile,
@@ -17,6 +18,9 @@ module.exports = {
     delete: deleteMatch
 }
 
+function updateBio(req, res){
+    
+}
 function studentHome(req, res) {
     Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {
             res.render('profiles/instructors/index', { title: 'Student', profiles });
