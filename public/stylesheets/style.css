@@ -150,6 +150,15 @@ button {
   overflow: hidden;
 }
 
+#show-page {
+  display: block;
+  width: 28rem;
+  max-width: 95vw;
+  padding: 1.75rem 2rem 2rem;
+  border-radius: 40px;
+  box-shadow: 0 0 0 0.25rem;
+}
+
 
 
 #form2 {
@@ -181,6 +190,14 @@ button {
 section>.app, section>div {
   display: grid;
   align-items: center;
+}
+
+.show>div {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .newInstr {

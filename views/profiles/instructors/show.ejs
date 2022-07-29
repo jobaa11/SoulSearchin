@@ -1,9 +1,9 @@
-<%- include('../../partials/header-main') %>
+<%- include('../../partials/header') %>
 
-    <%- include('../../partials/instructor') %>
+    <!-- <%- include('../../partials/instructor') %> -->
 
         <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=DELETE" method="POST">
-            <section id="show-page">
+            <section class="show" id="show-page">
                 <div>
                     <h1>
                         <%= instructor.title %>
@@ -41,7 +41,7 @@
                 <input type="hidden" name="chosenInstructors">
             </section>
 
-            <button type="submit">FIRE!</button>
+            <button class="create" type="submit">FIRE!</button>
         </form>
         <a href="/profiles/student/home">More Instructors</a>
 

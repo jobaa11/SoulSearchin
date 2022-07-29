@@ -4,7 +4,7 @@
     <% if (user) { %>
         <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
-                <div>
+                <div class="allapp">
                     <h1>
                         <%= profile.title %>
                     </h1>
@@ -24,7 +24,7 @@
                 </div>
                 <div>Instruments: </div>
                     <div>
-                        <%= profile.instruments %>
+                        <%= profile.instruments[6] %>
                         
                     </div>
                 <div>Genres: </div>
