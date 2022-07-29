@@ -23,7 +23,7 @@ router.get('/students/:id', profilesCtrl.showStudent)
 // PUT /student/:id update "student profile" functionality
 router.put('/students/:id', profilesCtrl.update);
 // DELETE /student/:id delete functionality
-router.get('/:id', profilesCtrl.updateBio)
+router.get('/edit', profilesCtrl.edit)
 router.delete('/students/:id', profilesCtrl.delete);
 
 

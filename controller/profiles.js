@@ -4,7 +4,7 @@ const Instrument = require('../models/instrument');
 
 
 module.exports = {
-    updateBio,
+    edit,
     studentHome,
     instructorHome,
     newProfile,
@@ -18,18 +18,20 @@ module.exports = {
     delete: deleteMatch
 }
 
-function updateBio(req, res){
-    
+function edit(req, res) {
+    const profile = Profile.findById(req.params.id);
+    res.render('profiles/edit', { profile });
+
 }
 function studentHome(req, res) {
     Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {
-            res.render('profiles/instructors/index', { title: 'Student', profiles });
-        });
+        res.render('profiles/instructors/index', { title: 'Student', profiles });
+    });
 }
 function instructorHome(req, res) {
     Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {
-            res.render('profiles/index', { title: 'Instructors', profiles });
-        });
+        res.render('profiles/index', { title: 'Instructors', profiles });
+    });
 }
 
 function newProfile(req, res) {
@@ -49,22 +51,21 @@ function newStudent(req, res) {
 function createInstructorProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = true;
-    Profile.create(req.body, function (err, profile) {
-        console.log(err, profile)
+    Profile.create({ instruments: req.body._id }, function (err, profile) {
         if (err) return res.redirect('/profiles/new');
         res.render('profiles/index', { profile });
+    })
+};
 
-    });
-}
 function createStudentProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = false;
     Profile.create(req.body, function (err, profile) {
-        console.log(err, profile);
         if (err) return res.redirect('/profiles/new');
         res.redirect('profiles/student/home');
-    });
-}
+    })
+};
+
 
 function showInstructor(req, res) {
     Profile.findById(req.params.id)
@@ -86,7 +87,7 @@ function update(req, res) {
         const profile = new Profile({});
         profile.chosenInstructors.push(req.params.id);
         console.log(profile);
-        profile.save((err) => {
+        profile.save((err, instructors) => {
             // res.redirect(`/profiles/student/${student._id}`);
             res.redirect('/profiles/student/home');
         });
