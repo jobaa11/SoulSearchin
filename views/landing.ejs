@@ -2,10 +2,10 @@
 
     <% if (user && profile) { %>
 
-        <h1>Welcome To SoulSearch.</h1>
+        <h1 id="welcome">Welcome To SoulSearch.</h1>
         
         <% } else { %>
             <h1>Welcome To SoulSearch.</h1>
-             <a href="/auth/google">CREATE ACCOUNT</a>
+             <a class="landing" href="/auth/google"><button>CREATE ACCOUNT</button></a>
             <% } %>
             <%- include('./partials/footer') %>
