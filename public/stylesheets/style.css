@@ -80,7 +80,7 @@ footer {
   text-align: justify;
   text-justify: auto;
   text-shadow: #51595c;
-  /* position: absolute; */
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
