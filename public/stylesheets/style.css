@@ -34,8 +34,8 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  justify-items: stretch;
-  align-items: stretch;
+  justify-items: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
   font: 16px;
@@ -60,11 +60,20 @@ button {
 
 main {
   display: grid;
-  margin-top: 15vmin;
+  margin: 5vmin;
   justify-content: center;
-  height: auto;
+  align-items: center;
+  padding: 10px;
+  /* height: auto; */
   margin-top: 30px;
 }
+
+.contact-links>a {
+  display: inline-block;
+  /* justify-content: center;  */
+
+}
+
 
 .maindiv {
   display: grid;
@@ -147,6 +156,39 @@ button {
   color: black;
 }
 
+#instrument-label {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+
+
+#instrument-btn {
+  font-size: 30px;
+  padding: 0 20px 0 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#instru {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding: 1.75rem 2rem 2rem;
+  border-radius: 40px;
+  box-shadow: 0 0 0 0.25rem;
+  gap: 10px;
+}
+
+
+#instruments {
+  width: 200px;
+}
+
+#add {
+  height: 30px;
+}
+
 #form1 {
   display: block;
   width: 28rem;
@@ -226,7 +268,6 @@ section>.app, section>div {
 
 #login {
   display: grid;
-
   flex-direction: column-reverse;
   /* display: flex; */
   justify-content: flex-end;

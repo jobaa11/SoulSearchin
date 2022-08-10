@@ -55,6 +55,7 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ), async (req, res, next) => {
     const profile = await Profile.findOne({ user: req.user._id });
+    // maybe moove first if statement down to last, might becausing error
     if (!profile)
       return res.redirect('/new');
     if (profile.isInstructor)

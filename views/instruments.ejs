@@ -1,17 +1,18 @@
 <%- include('./partials/header') %>
 
 
-    <form id="form1" class="allapp" type="submit" action="/instruments" method="POST">
+    <form id="instru" class="allapp" type="submit" action="/instruments" method="POST">
         
-        <label for="instruments">Instruments:</label>
-        <select id="instruments" name="instruments" multiple="3">
+        <ul>&nbsp;&nbsp;
+        <label id="instrument-label" for="instruments"><u>Instruments</u></label>
             <% instrument.forEach(function(i) { %>
-                <option value="<%= i._id %>">
+                <li class="instrument-list" value="<%= i._id %>">
                     <%= i.name %>
-                </option>
+                </li>
                 <% }) %>
                 <input type="text" name="name" id="add" autocomplete="off" autocapitalize="words">
-                <button type="submit" >ADD</button>
+                <button id="instrument-btn" type="submit" >ADD</button>
+            </ul>
     </form>
 
     <%- include('./partials/footer') %>
