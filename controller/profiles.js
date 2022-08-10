@@ -49,7 +49,7 @@ function studentHome(req, res) {
     });
 }
 function instructorHome(req, res) {
-    Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {
+    Profile.find({ isInstructor: true }).populate( {path:'instruments', model: 'Instrument'} ).exec(function (err, profiles) {
         res.render('profiles/index', { title: 'Instructors', profiles });
     });
 }
