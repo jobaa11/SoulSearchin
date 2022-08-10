@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-
+<h1>HERE</h1>
     <% if (user) { %>
         <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
@@ -24,8 +24,12 @@
                 </div>
                 <div>Instruments: </div>
                     <div>
-                        <%= profile.instruments %>
-                        
+                        <% profile.instruments.forEach(function(instrument) { %>
+                            <div>
+                                <%= instrument %>
+                            </div>
+                            <% }) %>
+
                     </div>
                 <div>Genres: </div>
                 <div>

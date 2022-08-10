@@ -20,10 +20,10 @@ module.exports = {
     deleteStudent
 }
 function updateBio(req, res) {
-    Profile.findById(req.params.id, function(err, bio) {
+    Profile.findById(req.params.id, function (err, bio) {
         var newBio = new Profile(req.body)
         console.log(req.body)
-        newBio.save(req.body, function(err) {
+        newBio.save(req.body, function (err) {
             res.redirect('/profiles/instructor/home');
         });
     });
@@ -49,10 +49,9 @@ function studentHome(req, res) {
     });
 }
 function instructorHome(req, res) {
-    Profile.find({ isInstructor: true }).populate( {path:'instruments', model: 'Instrument'} ).exec(function (err, profiles) {
-        res.render('profiles/index', { title: 'Instructors', profiles });
-    });
+    res.render('profiles/index');
 }
+
 
 function newProfile(req, res) {
     res.render('profiles/new');
@@ -74,7 +73,7 @@ function createInstructorProfile(req, res) {
     const instruments = Instrument.schema.path('name').enumValues;
     Profile.create(req.body, function (err, profile, instruments) {
         if (err) return res.redirect('/profiles/new');
-        res.render('profiles/index', { profile, instruments });
+        res.redirect('/profiles/index');
     })
 };
 
@@ -84,7 +83,7 @@ function createStudentProfile(req, res) {
     const instruments = Instrument.schema.path('name').enumValues;
     Profile.create(req.body, function (err, profile, instruments) {
         if (err) return res.redirect('/profiles/new');
-        res.redirect('profiles/student/home');
+        res.redirect('/profiles/student/home');
     })
 };
 
