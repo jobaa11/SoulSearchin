@@ -5,7 +5,7 @@ const Instrument = require('../models/instrument');
 
 module.exports = {
     edit,
-    updateBio,
+    updateProfile,
     studentHome,
     instructorHome,
     newProfile,
@@ -19,7 +19,7 @@ module.exports = {
     delete: deleteMatch,
     deleteStudent
 }
-function updateBio(req, res) {
+function updateProfile(req, res) {
     Profile.findById(req.params.id, function (err, bio) {
         var newBio = new Profile(req.body)
         console.log(req.body)
@@ -29,19 +29,12 @@ function updateBio(req, res) {
     });
 };
 
-// function updateBio(req, res) {
-//     Profile.findOne(req.params.id, function (err, bio) {
-//         var update = bio.bio.id(req.params.id);
-//        bio.update(req.body, function (err, bio) {
-//             res.redirect('/profiles/instructor/home');
-//         });
-//     });
-// };
 
 function edit(req, res) {
     const profile = Profile.findById(req.params.id);
-    res.render('profiles/instructors/edit', { profile });
-
+    Instrument.find({}).populate('name').exec(function (err, instruments) {
+    res.render('profiles/instructors/edit', { profile, instruments });
+    });
 }
 function studentHome(req, res) {
     Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, profiles) {

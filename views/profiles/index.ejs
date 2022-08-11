@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
-<h1>HERE</h1>
-    <% if (user) { %>
-        <% if (profile && profile.isInstructor) { %>
+<% if (user) { %>
+    <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
                 <div class="allapp">
                     <h1>
@@ -18,33 +17,33 @@
                     <%= profile.location %>
                 </div>
                 <div>Bio: </div>
-                <!-- <a href="/profiles/<%= profile._id%>/edit">UPDATE BIO</a> -->
                 <div>
                     <%= profile.bio %>
                 </div>
                 <div>Instruments: </div>
-                    <div>
-                        <% profile.instruments.forEach(function(instrument) { %>
-                            <div>
-                                <%= instrument.name %>
-                            </div>
-                            <% }) %>
-
+                <div>
+                    <% profile.instruments.forEach(function(instrument) { %>
+                        <div>
+                            <%= instrument.name %>
+                        </div>
+                        <% }) %>
+                        
                     </div>
-                <div>Genres: </div>
-                <div>
-                    <%= profile.genres %>
-                </div>
-                <div>Budget: </div>
-                <div>
-                    $<%= profile.budget %>/HR
-                </div>
-            </section>
-
-            <% } %>
-
+                    <div>Genres: </div>
+                    <div>
+                        <%= profile.genres %>
+                    </div>
+                    <div>Budget: </div>
+                    <div>
+                        $<%= profile.budget %>/HR
+                    </div>
+                    <a href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
+                </section>
+                
+                <% } %>
+                
                 <% } else { %>
                     <a href="profiles/"><button>Create Profile</button></a>
                     <% } %>
-
-                        <%- include('../partials/footer') %>
+                    
+                    <%- include('../partials/footer') %>
