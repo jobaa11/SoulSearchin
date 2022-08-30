@@ -102,7 +102,7 @@ A screenshot of your app's landing page and any other screenshots of interest.
   >
 </details>
 
-## :fast_forward: Next Steps
+
 
 
 
