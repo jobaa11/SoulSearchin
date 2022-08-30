@@ -104,14 +104,6 @@ A screenshot of your app's landing page and any other screenshots of interest.
 
 ## :fast_forward: Next Steps
 
-### Upcoming Features
 
-- [x] Add full matching functionality
 
-- [ ] Add comment functionality to all user to rate other users.
 
-- [ ] Multiple accounts
-
-- [ ] Add API Intergration
-
-- [ ] Better styling
