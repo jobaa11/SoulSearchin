@@ -1,6 +1,6 @@
 const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
-// const rootUrl = 'http://ziptasticapi.com/zipcode'
+// const rootUrl = request.get('http://ziptasticapi.com/zipcode')
 
 
 module.exports = {
@@ -20,15 +20,13 @@ module.exports = {
     deleteStudent
 }
 function updateProfile(req, res) {
-    Profile.findById(req.params.id, function (err, bio) {
-        var newBio = new Profile(req.body)
-        console.log(req.body)
-        newBio.save(req.body, function (err) {
+    Profile.updateOne({user: req.params.id}, function (err, profile) {
+        profile.save(function (err) {
+            if (err) return console.log(err)
             res.redirect('/profiles/instructor/home');
         });
     });
 };
-
 
 function edit(req, res) {
     const profile = Profile.findById(req.params.id);

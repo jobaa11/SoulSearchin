@@ -1,13 +1,18 @@
 const Profile = require('../models/profile');
 const User = require('../models/user')
 
+// line 5 is what I had originally, but line 6 is what I think I need. Same with line 7 & 8 (when i have connect, log 5/7 again to see thne try the new solution)
 const allUsers = new User({})
+// const allUsers = User.find({})
 const allProfiles = new Profile({});
-const nonProfileUrls = ["/logout", "/profiles/new/instructors", "/profiles/new/students", "/profiles/new/instructor", "/profiles/new/student", "profiles/instructor/home", "profiles/instructors/home", "profiles/student/home", "profiles/students/home", `profiles/instructors/${allProfiles._id}`,`profiles/students/${allProfiles._id}`,`profiles/instructor/${allProfiles._id}`,`profiles/student/${allProfiles._id}`, `profiles/${allProfiles._id}`, `profiles/${allProfiles._id}/edit`, 'profiles/instructor', 
-`profiles/instructors/${allUsers._id}`,`profiles/students/${allUsers._id}`,`profiles/instructor/${allUsers._id}`,`profiles/student/${allUsers._id}`, `profiles/${allUsers._id}`, `profiles/${allUsers._id}/edit`, 'profiles/instructor', '/images/LOGO.png'];
+// const allProfiles = Profile.find({})
+// every path that is in this url will be false when added into line 14 if statement so if (false && req.user)
+const nonProfileUrls = ["/logout", "/profiles/new/instructors", "/profiles/new/students", "/profiles/new/instructor", "/profiles/new/student",
+`profiles/instructors/${allUsers._id}`, '/images/LOGO.png'];
 
 module.exports = (req, res, next) => {
   if (!nonProfileUrls.includes(req.url) && req.user) {
+    // query key name was "user" at first but i think this needs to be _id or something that matches the property name
     Profile.findOne({ user: req.user._id })
     .populate('instruments').exec((err, profile) => {
         if (!profile)
@@ -18,4 +23,4 @@ module.exports = (req, res, next) => {
   } else {
     next();
   }
-};
+};  
