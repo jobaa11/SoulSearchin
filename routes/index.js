@@ -8,31 +8,23 @@ const passport = require('passport');
 
 
 
-router.get('/', (req, res, next) => {
-    Profile.find({}, (err, profile) => {
-        res.render('landing', { profile });
-      });
+router.get('/', async (req, res, next) => {
+  console.log(req.user._id)
+  const mine = await Profile.findOne({ user: req.user._id }, (err, profile) => {
+    console.log(mine, 'hey')
+    res.render('landing', { profile });
   });
+});
 router.get('/about', (req, res) => {
-    res.render('about');
-  })
+  res.render('about');
+})
 router.get('/contact', (req, res) => {
-    res.render('contact');
-  })
+  res.render('contact');
+})
 
-// router.get('/profiles/instructors', isLoggedIn, (req, res) => {
-//     Profile.find({isInstructor: true})
-//       .populate('instruments')
-//       .exec(function (err, profile) {
-//         res.render('profiles/instructors/index',
-//           {
-//             title: 'Instructors',
-//             profile
-//           });
-//       });
-//   });
 
-router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
+
+// router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
 
 
 
@@ -51,26 +43,26 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    failureRedirect: '/'
+    failureRedirect: '/landing'
   }
 ), async (req, res, next) => {
-    const profile = await Profile.findOne({ user: req.user._id });
-    // maybe moove first if statement down to last, might becausing error
-    if (!profile)
-      return res.redirect('/new');
-    if (profile.isInstructor)
-      return res.redirect('/profiles/instructor/home');
-    if (!profile.isInstructor)
-      return res.redirect('/profiles/student/home');
-      
-  });
+  const profile = await Profile.findOne({ user: req.user._id });
+  if (!profile)
+  // if (await !Profile.exists({user: req.user._id}))
+    return res.redirect('/profiles/new');
+  if (profile.isInstructor)
+    return res.redirect(`/profiles/instructor/${profile._id}`);
+  if (!profile.isInstructor)
+    return res.redirect('/profiles/instructors/index');
+
+});
 
 
 // Logout route
 router.get('/logout', (req, res) => {
-    req.logout((err) => {
-      res.redirect('/');
-    });
+  req.logout((err) => {
+    res.redirect('/');
   });
+});
 
 module.exports = router;

@@ -3,20 +3,20 @@
 
 
     <% if (user && profile) { %>
-        <% profiles.forEach(function(p) { %>
+        <% profile { %>
             <section class="show" id="show-page">
                 <div class="app">
                     <h1>
-                        <%= p.title %>
+                        <%= profile.title %>
                     </h1>
                 </div>
                 <div class="">Name: </div>
                 <div>
-                    <%= p.nickname %>
+                    <%= profile.nickname %>
                 </div>
                 <div>Location: </div>
                 <div>
-                    <%= p.location %>
+                    <%= profile.location %>
                 </div>
             </section>
             <a class="" href="/profiles/instructors/<%= p._id %>"><button class="create">View Instructor

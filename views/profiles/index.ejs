@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
+
+
+<h1>here</h1>
+<div><% console.log(profile._id)%></div>
+
 <% if (user) { %>
     <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
                 <div class="allapp">
-                    <h1>
-                        <%= profile.title %>
-                    </h1>
                 </div>
                 <div>Name: </div>
                 <div>
@@ -42,8 +44,8 @@
                 
                 <% } %>
                 
-                <% } else { %>
-                    <a href="profiles/"><button>Create Profile</button></a>
-                    <% } %>
+                <% } %>
+  
+                    
                     
                     <%- include('../partials/footer') %>
