@@ -6,7 +6,7 @@ const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
 const passport = require('passport');
 
-router.get('/', async (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.render('landing');
 });
 router.get('/about', (req, res) => {

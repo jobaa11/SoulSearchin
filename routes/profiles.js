@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const profilesCtrl = require('../controller/profiles')
 
-// starting path
-// /profiles
+// starting path /profiles
 
 //WORKS
 router.get('/new', profilesCtrl.newProfile)
@@ -18,21 +17,12 @@ router.get('/student/:id', profilesCtrl.showStudent)
 
 
 
-//IN PROGRESS
-// router.get('/student/home', profilesCtrl.studentHome)
+//IN PROGRESS - add a view all instuctors and student page so students can add them and instructors can accept them
+// look into bootstrap and materialize and also refactoring for react
 router.get('/:id/edit', profilesCtrl.edit)
-
-
-
-
-
-
-
-
 
 router.put('/instructor/home', profilesCtrl.updateProfile);
 // router.put('/students/:id', profilesCtrl.update);
-
 
 router.delete('/students/:id', profilesCtrl.delete);
 router.delete('/student/:id', profilesCtrl.deleteStudent);

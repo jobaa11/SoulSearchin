@@ -12,19 +12,19 @@ const Instrument = require('../models/instrument');
 module.exports = {
     newProfile,
     newInstructorForm,
-    createInstructorProfile,
-    showInstructor,
-
-
     newStudentForm,
+    createInstructorProfile,
     createStudentProfile,
+    showInstructor,
+    showStudent,
+
+
 
 
 
     edit,
     updateProfile,
     studentHome,
-    showStudent,
     delete: deleteMatch,
     deleteStudent,
     // update,
@@ -34,7 +34,7 @@ module.exports = {
 // working 
 
 function newProfile(req, res) {
-    res.render('profiles/new');
+    res.render('profiles/new/new');
 }
 
 function newInstructorForm(req, res) {
