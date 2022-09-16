@@ -38,15 +38,28 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font: 16px;
+  font: 20px;
 }
 
 #logo {
   height: 60px;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   justify-content: flex-start;
 }
+
+
+
+ul>a {
+  flex-direction: row;
+  text-decoration: none;
+}
+
+ul>a:hover,
+ul>a:active {
+  text-decoration: underline;
+}
+
+
 
 button {
   font-size: 30px;
@@ -89,7 +102,7 @@ footer {
   text-align: justify;
   text-justify: auto;
   text-shadow: #51595c;
-  position:absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -105,15 +118,15 @@ footer {
   font-weight: 700;
   line-height: 1.25;
   position: relative;
-  border-color:antiquewhite;
+  border-color: antiquewhite;
   background-color: aliceblue;
   /* color: beige; */
   border: 2px solid transparent;
   outline: 0;
   text-align: center;
   text-decoration: none;
-  transition: background-color .15s,border-color .15s,color .15s,transform .35s;
-  padding: 0.85em 1.25em 0.75em!important;
+  transition: background-color .15s, border-color .15s, color .15s, transform .35s;
+  padding: 0.85em 1.25em 0.75em !important;
 
 }
 
@@ -132,7 +145,7 @@ footer {
 .welcome {
   display: flex;
   align-items: center;
-  color:antiquewhite
+  color: antiquewhite
 }
 
 h2 {
@@ -200,12 +213,27 @@ button {
 
 #show-page {
   display: block;
-  width: 28rem;
-  max-width: 95vw;
-  padding: 1.75rem 2rem 2rem;
+  width: 340px;
+  max-width: 440px;
+  padding: 30px 40px 20px;
+  /* padding: 1.75rem 2rem 2rem; */
   border-radius: 40px;
   box-shadow: 0 0 0 0.25rem;
 }
+
+#show-page>div {
+  display: flex;
+  width: 300px;
+  max-width: 440px;
+  padding: 7px;
+}
+
+#show-page>a {
+  display: flex;
+  padding-top: 9px;
+}
+
+
 
 
 
@@ -235,7 +263,8 @@ button {
   margin: 0;
 }
 
-section>.app, section>div {
+section>.app,
+section>div {
   display: grid;
   align-items: center;
 }
@@ -246,8 +275,17 @@ show>div {
   grid-template-columns: repeat(4, 2fr);
 }
 
+.name-input {
+  text-transform: capitalize;
+}
 
-.show>div, show>button {
+.location-input {
+  text-transform: capitalize;
+}
+
+
+.show>div,
+show>button {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -275,14 +313,12 @@ show>div {
 #login {
   display: grid;
   flex-direction: column-reverse;
-  /* display: flex; */
   justify-content: flex-end;
-  /* align-items:flex-start; */
 }
 
 .role {
   display: grid;
-  font-family:fantasy;
+  font-family: fantasy;
   flex-direction: column;
   align-items: center;
   justify-content: center;

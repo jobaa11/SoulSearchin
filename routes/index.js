@@ -6,27 +6,15 @@ const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
 const passport = require('passport');
 
-
-
 router.get('/', async (req, res, next) => {
-  console.log(req.user._id)
-  const mine = await Profile.findOne({ user: req.user._id }, (err, profile) => {
-    console.log(mine, 'hey')
-    res.render('landing', { profile });
-  });
+  res.render('landing');
 });
 router.get('/about', (req, res) => {
   res.render('about');
-})
+});
 router.get('/contact', (req, res) => {
   res.render('contact');
-})
-
-
-
-// router.get('/profiles/instructors/:id', profilesCtrl.showInstructor)
-
-
+});
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -48,7 +36,6 @@ router.get('/oauth2callback', passport.authenticate(
 ), async (req, res, next) => {
   const profile = await Profile.findOne({ user: req.user._id });
   if (!profile)
-  // if (await !Profile.exists({user: req.user._id}))
     return res.redirect('/profiles/new');
   if (profile.isInstructor)
     return res.redirect(`/profiles/instructor/${profile._id}`);

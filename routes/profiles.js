@@ -24,7 +24,6 @@ router.get('/:id/edit', profilesCtrl.edit)
 
 
 
-// router.get('/instructor/home', profilesCtrl.instructorPage)
 
 
 router.post('/new/student', profilesCtrl.createStudentProfile);

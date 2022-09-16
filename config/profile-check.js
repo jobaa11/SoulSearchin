@@ -7,7 +7,6 @@ module.exports = (req, res, next) => {
   if (!nonProfileUrls.includes(req.url) && req.user) {
     Profile.findOne({ user: req.user._id })
     .populate('instruments').exec((err, profile) => {
-      console.log(req)
         if (!profile)
           return res.render('profiles/new', { profile: null });
         req.profile = profile;

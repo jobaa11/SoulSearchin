@@ -2,50 +2,50 @@
 
 
 
-<h1>here</h1>
-<div><% console.log(profile._id)%></div>
-
-<% if (user) { %>
-    <% if (profile && profile.isInstructor) { %>
+    <% if (user) { %>
+        <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
-                <div class="allapp">
-                </div>
-                <div>Name: </div>
                 <div>
-                    <%= profile.nickname %>
-                </div>
-                <div>Location: </div>
-                <div>
-                    <%= profile.location %>
-                </div>
-                <div>Bio: </div>
-                <div>
-                    <%= profile.bio %>
-                </div>
-                <div>Instruments: </div>
-                <div>
-                    <% profile.instruments.forEach(function(instrument) { %>
-                        <div>
-                            <%= instrument.name %>
-                        </div>
-                        <% }) %>
-                        
+                    <div class="name-input">Name:
+                        <%= profile.nickname %>
                     </div>
-                    <div>Genres: </div>
+                </div>
+                <div>
+                    <div class="location-input">Location:
+                        <%= profile.location %>
+                    </div>
+                </div>
+                <div>
+                    <div>Bio:
+                        <%= profile.bio %>
+                    </div>
+                </div>
+                <div>Instruments:
+                    <div>
+                        <% profile.instruments.forEach(function(instrument) { %>
+
+                            <%= instrument.name %>
+
+                                <% }) %>
+                    </div>
+                </div>
+                <div>Genres:
                     <div>
                         <%= profile.genres %>
                     </div>
-                    <div>Budget: </div>
-                    <div>
-                        $<%= profile.budget %>/HR
-                    </div>
-                    <a href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
-                </section>
-                
+                </div>
+                <div>Budget:
+                <div>
+                    $<%= profile.budget %>/HR
+                </div>
+                </div>
+                <a class="update-profile-link" href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
+            </section>
+
+            <% } %>
+
                 <% } %>
-                
-                <% } %>
-  
-                    
-                    
+
+
+
                     <%- include('../partials/footer') %>

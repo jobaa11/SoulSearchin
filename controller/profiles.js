@@ -1,6 +1,12 @@
 const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
-// const rootUrl = request.get('http://ziptasticapi.com/zipcode')
+
+
+
+
+// ADD ZIP CODE API (ADD PROPERTY TO MODEL AND FORM)
+// import fetch from 'node-fetch';
+// const rootUrl = fetch('http://ziptasticapi.com/zipcode')
 
 
 module.exports = {
@@ -21,15 +27,23 @@ module.exports = {
     createStudentProfile,
     delete: deleteMatch,
     deleteStudent,
-    // instructorPage,
     // update,
 }
 
 
+// working 
 
+function newProfile(req, res) {
+    res.render('profiles/new');
+}
 
+function newInstructorForm(req, res) {
+    newInstructor = new Profile(req.body)
+    Instrument.find({}).populate('name').exec(function (err, instruments) {
+        res.render('profiles/new/instructor', { instruments, instructor: newInstructor });
+    });
+}
 
-//POST /profiles/new/instructor
 function createInstructorProfile(req, res) {
     req.body.user = req.user._id;
     req.body.isInstructor = true;
@@ -39,31 +53,15 @@ function createInstructorProfile(req, res) {
     })
 };
 
-
-
-// GET /profiles/instructor/:id
 function showInstructor(req, res) {
     Profile.findById(req.params.id).populate('instruments').exec(function (err, profile) {
         res.render('profiles/index', { profile })
     })
 }
 
-function newProfile(req, res) {
-    res.render('profiles/new');
-}
 
 
-function newInstructorForm(req, res) {
-    newInstructor = new Profile(req.body)
-    Instrument.find({}).populate('name').exec(function (err, instruments) {
-        res.render('profiles/new/instructor', { instruments, instructor: newInstructor });
-    });
-}
 
-
-// function instructorPage(req, res) {
-//     res.render('profiles/index');
-// }
 
 function updateProfile(req, res) {
     Profile.updateOne({ user: req.params.id }, function (err, profile) {
