@@ -8,17 +8,18 @@ const profilesCtrl = require('../controller/profiles')
 //WORKS
 router.get('/new', profilesCtrl.newProfile)
 router.get('/new/instructor', profilesCtrl.newInstructorForm)
+router.get('/new/student', profilesCtrl.newStudentForm)
 router.post('/new/instructor', profilesCtrl.createInstructorProfile);
+router.post('/new/student', profilesCtrl.createStudentProfile);
 router.get('/instructor/:id', profilesCtrl.showInstructor)
+router.get('/student/:id', profilesCtrl.showStudent)
 
 
 
 
 
 //IN PROGRESS
-router.get('/student/home', profilesCtrl.studentHome)
-router.get('/new/student', profilesCtrl.newStudent)
-router.get('/students/:id', profilesCtrl.showStudent)
+// router.get('/student/home', profilesCtrl.studentHome)
 router.get('/:id/edit', profilesCtrl.edit)
 
 
@@ -26,7 +27,6 @@ router.get('/:id/edit', profilesCtrl.edit)
 
 
 
-router.post('/new/student', profilesCtrl.createStudentProfile);
 
 
 

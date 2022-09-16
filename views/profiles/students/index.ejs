@@ -1,60 +1,71 @@
-<%- include('../../partials/header-main') %>
+<%- include('../../partials/header') %>
 
-    <%- include('../../partials/student') %>
 
         <% if (user && student) { %>
             <section id="show-page">
-                <div>
-                    <h1>
-                        <%= student.title %>
-                    </h1>
-                </div>
-                <div>Name: </div>
-                <div>
-                    <%= student.nickname %>
-                </div>
-                <div>Location: </div>
-                <div>
-                    <%= student.location %>
-                </div>
-                <div>Bio: </div>
-                <div>
-                    <%= student.bio %>
-                </div>
-                <div>Instruments: </div>
-                <div>
-                    <% student.instruments.forEach(function(i) { %>
-                        <div>
-                            <%= i.name %>
-                        </div>
 
-                        <% }) %>
+                <div>Name:
+                    <div class="name-input">
+                        <%= student.nickname %>
+                    </div>
                 </div>
-                <div>Genres: </div>
-                <div>
-                    <%= student.genres %>
+                <div>Location:
+                    <div class="location-input">
+                        <%= student.location %>
+                    </div>
                 </div>
-                <div>Skill: </div>
-                <div>
-                    <%= student.skillLevel %>
+                <div>Bio:
+                    <div class="bio-input">
+                        <%= student.bio %>
+                    </div>
                 </div>
-                <div>Instructors: </div>
-                <div>
-                    <% student.chosenInstructors.forEach(function(i) { %>
-                        <div>
-                            <%= i.name %>
-                        </div>
+                <div>Instruments:
+                    <div>
+                        <% student.instruments.forEach(function(i) { %>
 
-                        <% }) %>
+                            <%= i.name %>
+
+                                <% }) %>
+                    </div>
                 </div>
-                <div>Interest: </div>
-                <div>
-                    <%= student.interest %>
+                <div>Genres:
+                    <div>
+                        <%= student.genres %>
+                    </div>
                 </div>
+                <div>Skill:
+                    <div>
+                        <%= student.skillLevel %>
+                    </div>
+                </div>
+                <div>Instructors:
+                    <div>
+                        <% student.chosenInstructors.forEach(function(i) { %>
+
+                            <%= i.name %>
+
+
+                                <% }) %>
+                    </div>
+                </div>
+                <div>Needs:
+                    <div>
+                        <% student.needs.forEach(function(need) { %>
+
+                            <%= need.name %>
+
+                                <% }) %>
+                    </div>
+                </div>
+                <div>Interest:
+                    <div>
+                        <%= student.interest %>
+                    </div>
+                </div>
+                <a href="/profiles/instructors">View Instructors</a>
             </section>
 
             <% } %>
 
-                <a href="/profiles/instructors">More Instructors</a>
 
                 <%- include('../../partials/nav-footer') %>

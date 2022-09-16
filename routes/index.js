@@ -40,7 +40,7 @@ router.get('/oauth2callback', passport.authenticate(
   if (profile.isInstructor)
     return res.redirect(`/profiles/instructor/${profile._id}`);
   if (!profile.isInstructor)
-    return res.redirect('/profiles/instructors/index');
+    return res.redirect(`/profiles/student/${profile._id}`);
 
 });
 
