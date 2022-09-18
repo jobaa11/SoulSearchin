@@ -1,0 +1,84 @@
+<%- include('../../partials/header') %>
+
+
+
+
+    <% if (user && instructors) { %>
+
+        <main class="view-instructors">
+        <% instructors.forEach(function(instructor) { %>
+                <section class="all-instructors"  id="show-page">
+                    <div class="">Name:&nbsp;
+                        <div class="name-input">
+                            <%= instructor.nickname %>
+                        </div>
+                    </div>
+                    <div> Instruments:&nbsp;
+                        <% instructor.instruments.forEach(function(instrument) { %>
+                            <div>
+                                <%=instrument.name%>
+                            </div> &nbsp;
+                            <%})%>
+                    </div>
+                    <a class="view-instructors-btn" href="/profiles/instructors/<%= instructor._id %>"><button class="create">View Instructor
+                            Profile</button></a>
+                </section>
+                <!-- need to change change whether a profile can see 'updates link' if not profile owner
+            // when that is resolved, link should be /profiles/instructor/<%= instructor._id %>" -->
+            
+            <% })%>
+        </main>
+
+
+                <!-- 
+        <section class="section" id="show-page">
+            <div class="newInstr">
+                <h1>
+
+                </h1>
+            </div>
+            <div>Name: </div>
+            <div>
+
+            </div>
+            <div>Location: </div>
+            <div>
+
+            </div>
+            <div>Bio: </div>
+            <div>
+
+            </div>
+            <div>Instruments: </div>
+            <div>
+
+                <div>
+
+                </div>
+
+
+            </div>
+            <div>Skill: </div>
+            <div>
+
+            </div>
+            <div>
+
+                <div>
+
+                    <button>HIRE!</button>
+                </div>
+
+
+            </div>
+            <div>Interest: </div>
+            <div>
+
+            </div>
+        </section> -->
+                <!-- <form action="/profiles/student?_method=DELETE" method="POST">
+            <button class="create" type="submit">DELETE ACCOUNT</button>
+        </form> -->
+
+                <% } %>
+                    <%- include('../../partials/nav-footer') %>

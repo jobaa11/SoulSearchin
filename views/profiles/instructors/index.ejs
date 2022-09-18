@@ -2,79 +2,50 @@
 
 
 
-    <% if (user && profile) { %>
-        <% profile { %>
-            <section class="show" id="show-page">
-                <div class="app">
-                    <h1>
-                        <%= profile.title %>
-                    </h1>
-                </div>
-                <div class="">Name: </div>
+    <% if (user) { %>
+        <% if (profile && profile.isInstructor) { %>
+            <section id="show-page">
                 <div>
-                    <%= profile.nickname %>
+                    <div class="name-input">Name:
+                        <%= profile.nickname %>
+                    </div>
                 </div>
-                <div>Location: </div>
                 <div>
-                    <%= profile.location %>
+                    <div class="location-input">Location:
+                        <%= profile.location %>
+                    </div>
                 </div>
+                <div>
+                    <div>Bio:
+                        <%= profile.bio %>
+                    </div>
+                </div>
+                <div>Instruments:
+                    <div>
+                        <% profile.instruments.forEach(function(instrument) { %>
+
+                            <%= instrument.name %>
+
+                                <% }) %>
+                    </div>
+                </div>
+                <div>Genres:
+                    <div>
+                        <%= profile.genres %>
+                    </div>
+                </div>
+                <div>Budget:
+                <div>
+                    $<%= profile.budget %>/HR
+                </div>
+                </div>
+                <a class="update-profile-link" href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
             </section>
-            <a class="" href="/profiles/instructors/<%= p._id %>"><button class="create">View Instructor
-                    Profile</button></a>
-            <% }) %>
+
+            <% } %>
 
                 <% } %>
 
-                    <% if (user && !profile.isInstructor) { %>
-                        <section class="section" id="show-page">
-                            <div class="newInstr">
-                                <h1>
-                                    <%= profile.title %>
-                                </h1>
-                            </div>
-                            <div>Name: </div>
-                            <div>
-                                <%= profile.nickname %>
-                            </div>
-                            <div>Location: </div>
-                            <div>
-                                <%= profile.location %>
-                            </div>
-                            <div>Bio: </div>
-                            <div>
-                                <%= profile.bio %>
-                            </div>
-                            <div>Instruments: </div>
-                            <div>
-                                <% profile.instruments.forEach(function(i) { %>
-                                    <div>
-                                        <%= i.name %>
-                                    </div>
-                                    <% }) %>
 
-                            </div>
-                            <div>Skill: </div>
-                            <div>
-                                <%= profile.skillLevel %>
-                            </div>
-                            <!-- <div>Instructors: </div> -->
-                            <div>
-                                <% profile.chosenInstructors.forEach(function(i) { %>
-                                    <div>
-                                        <%= i.name %>
-                                            <button>FIRE!</button>
-                                    </div>
 
-                                    <% }) %>
-                            </div>
-                            <div>Interest: </div>
-                            <div>
-                                <%= profile.interest %>
-                            </div>
-                        </section>
-                        <% } %>
-                            <form action="/profiles/student/<%= profile._id %>?_method=DELETE" method="POST">
-                                <button class="create" type="submit">DELETE ACCOUNT</button>
-                            </form>
-
-                            <%- include('../../partials/nav-footer') %>
+                    <%- include('../../partials/footer') %>

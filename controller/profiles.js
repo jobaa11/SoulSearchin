@@ -17,7 +17,9 @@ module.exports = {
     createStudentProfile,
     showInstructor,
     showStudent,
-
+    getAll,
+    showTeacher,
+    
 
 
 
@@ -71,7 +73,7 @@ function createStudentProfile(req, res) {
 
 function showInstructor(req, res) {
     Profile.findById(req.params.id).populate('instruments').exec(function (err, profile) {
-        res.render('profiles/index', { profile })
+        res.render('profiles/instructors/index', { profile })
     })
 }
 
@@ -79,6 +81,18 @@ function showStudent(req, res) {
     Profile.findById(req.params.id).populate('instruments').populate('needs').exec(function (err, student) {
         res.render('profiles/students/index', { student })
     });
+}
+
+function getAll(req, res) {
+    Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, instructors) {
+        if (err) return res.redirect(`/profiles/students/${req.user._id}`)
+        res.render('profiles/instructors/list', { instructors })
+    })
+}
+function showTeacher(req, res) {
+    Profile.findById(req.params.id).populate('instruments').exec(function (err, instructor) {
+        res.render('profiles/instructors/show', { instructor })
+    })
 }
 
 

@@ -2,26 +2,25 @@
 
  
 
-        <form id="edit-form" action="/profiles/students/<%= instructor._id %>?_method=DELETE" method="POST">
+
             <section class="show" id="show-page">
-                <div>
-                    <h1>
-                        <%= instructor.title %>
-                    </h1>
-                </div>
-                <div>Name: </div>
+   
+                <div>Name: 
                 <div>
                     <%= instructor.nickname %>
                 </div>
-                <div>Location: </div>
+                </div>
+                <div>Location: 
                 <div>
                     <%= instructor.location %>
                 </div>
-                <div>Bio: </div>
+                </div>
+                <div>Bio: 
                 <div>
                     <%= instructor.bio %>
                 </div>
-                <div>Instruments: </div>
+                </div>
+                <div>Instruments: 
                 <div>
                     <% instructor.instruments.forEach(function(i) { %>
                         <div>
@@ -29,22 +28,23 @@
                         </div>
 
                         <% }) %>
+                    </div>
                 </div>
-                <div>Genres: </div>
+                <div>Genres: 
                 <div>
                     <%= instructor.genres %>
                 </div>
-                <div>Budget: </div>
+                </div>
+                <div>Budget:
                 <div>
                     $<%= instructor.budget %>/HR
                 </div>
-                <!-- <input type="hidden" name="chosenInstructors"> -->
+                </div>
+                <button class="hire" type="submit">HIRE?</button>
+                <a href="/profiles/instructors">More Instructors</a>
             </section>
 
-            <button class="create" type="submit">HIRE?</button>
-            <button class="create" type="submit">FIRE!</button>
-        </form>
-        <a href="/profiles/student/home">More Instructors</a>
+     
 
 
 

@@ -14,6 +14,10 @@ router.get('/instructor/:id', profilesCtrl.showInstructor)
 router.get('/student/:id', profilesCtrl.showStudent)
 
 
+// student viewing a teacher page (different nav bar)
+router.get('/instructors', profilesCtrl.getAll)
+router.get('/instructors/:id', profilesCtrl.showTeacher)
+
 
 
 
