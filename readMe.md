@@ -3,9 +3,9 @@
 :notes: :musical_note: SOUL SEARCH :musical_note: :notes:
 </h1>
 
-<h3>https://soul-search.herokuapp.com/</h3>
+<h2>https://soul-search.herokuapp.com/</h2>
 
-<h5>Joba Aladeselu</h5>
+<h3>Joba Aladeselu</h3>
 
 <a href="https://www.linkedin.com/in/joba-a-ja11/">
 <img
@@ -46,8 +46,8 @@ Hear at Soul Search we allow students to find the right match for them that will
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3>Create Page</h3> | <img src="https://trello.com/c/bgWaR1xC/12-student-user-page-show" width="700"/> |
-  | <h3 align="center">Portfolio Page</h3> | <img src="https://trello.com/c/bgWaR1xC/12-student-user-page-show" width="700" /> |
+  | <h3>Create Page</h3> | <img src="https://github.com/jobaa11/SoulSearchin/blob/main/public/images/Create%20Page.png" width="700"/> |
+  | <h3 align="center">Portfolio Page</h3> | <img src="https://github.com/jobaa11/SoulSearchin/blob/main/public/images/Portfolio%20Page.png" width="700" /> |
 </details>
 
 
@@ -74,23 +74,21 @@ Hear at Soul Search we allow students to find the right match for them that will
 <details open>
   <summary>How to Create a Profile</summary>
   <ol>
+  <li>Sign into a Google Account</li>
+  <li>Click 'Create Account' and choose between creating a student or teacher account</li>
     <li>
-      Fill out the form and start looking for the perfect music match for you!
+      As a student, you are able to choose between the teacher accounts and add them to your list of teachers you want to learn from. Select "HIRE" if you would like send a request to add them to your list.
     </li>
- 
-
-    </li>
-    <li>Click on the "FIRE" in the bottom-right corner to delete a instructor match.</li>
+    <li>As a teacher, you get to choose which students you accept to teach and then reach out to them to start setting up a teaching schedule.</li>
+    <li>Now that you have matched with your teacher/student, let the learning begin!</li>
   </ol>
 </details>
 
 
 <details>
-  <h3>:link: Links</h3>
   <summary>Trello Board</summary>
   <a href="https://trello.com/b/eoGTofRV/p2"
-    ></a
-  >
+    >Trello - Soul-Search</a>
 </details>
 
 <details open>
@@ -99,11 +97,6 @@ Hear at Soul Search we allow students to find the right match for them that will
     >https://soul-search.herokuapp.com/</a
   >
 </details>
-
-
-
-
-
 
 
 - [ ] Add API Intergration
