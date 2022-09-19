@@ -11,18 +11,14 @@
 <img
   src="https://img.shields.io/badge/%40-joba--a--ja11-blue?style=flat&logo=Linkedin&logoColor=white"/>
 </a>
-<<<<<<< HEAD
+
  <a href="https://github.com/jobaa11">
 <img
   src="https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white"/>
 </a> 
-=======
- <a href="https://www.linkedin.com/in/joba-a-ja11/">
-<img
-  src="https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white"/>
-</a> 
-https://img.shields.io/badge/-jobaa11-blue?style=flat&logo=github&logoColor=white
->>>>>>> 3ae2cfb (Update readMe.md)
+
+
+
 
 <h1>:pencil: Description</h1>
 
@@ -39,14 +35,10 @@ Hear at Soul Search we allow students to find the right match for them that will
 
   | Description | Screenshot | 
   |:------------:|-----------| 
-<<<<<<< HEAD
+
   | <h3>ERD</h3> | <img src="https://trello.com/1/cards/62d9c78e695f9371c02704bb/attachments/62d9c7a736d3f219475272b3/previews/62d9c7a836d3f21947527314/download/USER_PROFILE_ERD.JPG" width="700"/> |
-=======
-  | <h3>ERD</h3> | <img
-    src="https://trello.com/1/cards/62d9c78e695f9371c02704bb/attachments/62d9c7a736d3f219475272b3/previews/62d9c7a836d3f21947527314/download/USER_PROFILE_ERD.JPG"
-    width="700"
-  /> |
->>>>>>> 3ae2cfb (Update readMe.md)
+
+  | <h3>ERD</h3> | <img src="https://trello.com/1/cards/62d9c78e695f9371c02704bb/attachments/62d9c7a736d3f219475272b3/previews/62d9c7a836d3f21947527314/download/USER_PROFILE_ERD.JPG" width="700" /> |
 
 </details>
 
@@ -55,15 +47,10 @@ Hear at Soul Search we allow students to find the right match for them that will
 
   |    Description    | Screenshot | 
   |:-----------------:|-------------| 
-<<<<<<< HEAD
-  | <h3>Home Page</h3>| <img src="https://trello.com/1/cards/62d9c7d925680b3d42c21b52/attachments/62d9c81663b4e918f03e39e9/previews/62d9c81763b4e918f03e39f9/download/HomePage_(index).JPG" width="700"/> |
-  | <h3 align="center">Profile Page</h3> | <img src="https://trello.com/c/Xl4P9fK9/11-teacher-user-page-show" width="700"/> |
-=======
-  | <h3>Home Page</h3>| <img
-    src="https://trello.com/1/cards/62d9c7d925680b3d42c21b52/attachments/62d9c81663b4e918f03e39e9/previews/62d9c81763b4e918f03e39f9/download/HomePage_(index).JPG"
-    width="700"
-  /> |
-  | <h3 align="center">Profile Page</h3> | <img
+
+  | <h3>Home Page</h3>| <img src="https://trello.com/1/cards/62d9c7d925680b3d42c21b52/attachments/62d9c81663b4e918f03e39e9/previews/62d9c81763b4e918f03e39f9/download/HomePage_(index).JPG" width="700"/> | | <h3 align="center">Profile Page</h3> | <img src="https://trello.com/c/Xl4P9fK9/11-teacher-user-page-show" width="700"/> |
+| <h3>Home Page</h3>| <img src="https://trello.com/1/cards/62d9c7d925680b3d42c21b52/attachments/62d9c81663b4e918f03e39e9/previews/62d9c81763b4e918f03e39f9/download/HomePage_(index).JPG" width="700" /> |
+| <h3 align="center">Profile Page</h3> | <img
     src="https://trello.com/c/Xl4P9fK9/11-teacher-user-page-show"
     width="700"
   /> |
@@ -75,19 +62,16 @@ Hear at Soul Search we allow students to find the right match for them that will
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-<<<<<<< HEAD
+
   | <h3>Feed Page</h3> | <img src="https://trello.com/c/bgWaR1xC/12-student-user-page-show" width="700"/> |
   | <h3 align="center">Profile Page</h3> | 
-=======
+
   | <h3>Feed Page</h3> | <img
     src="https://trello.com/c/bgWaR1xC/12-student-user-page-show"
     width="700"
   /> |
-  | <h3 align="center">Profile Page</h3> | <img
-    src=
-    width="700"
-  /> |
->>>>>>> 3ae2cfb (Update readMe.md)
+  | <h3 align="center">Profile Page</h3> | <img src= width="700" /> |
+
 </details>
 
 ## :computer: Technologies Used
@@ -144,9 +128,8 @@ Hear at Soul Search we allow students to find the right match for them that will
 
 
 
-<<<<<<< HEAD
-=======
+
 - [ ] Add API Intergration
 
 - [ ] Better styling
->>>>>>> 3ae2cfb (Update readMe.md)
+
