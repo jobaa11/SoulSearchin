@@ -3,7 +3,6 @@ const Instrument = require('../models/instrument');
 
 
 
-
 // ADD ZIP CODE API (ADD PROPERTY TO MODEL AND FORM)
 // import fetch from 'node-fetch';
 // const rootUrl = fetch('http://ziptasticapi.com/zipcode')
@@ -32,8 +31,6 @@ module.exports = {
     deleteStudent,
 }
 
-
-// working 
 
 function newProfile(req, res) {
     res.render('profiles/new/new');
@@ -72,21 +69,22 @@ function createStudentProfile(req, res) {
 };
 
 function showInstructor(req, res) {
-    Profile.findById(req.params.id).populate('instruments').exec(function (err, profile) {
+    Profile.findById(req.params.id).populate('instruments').populate('chosenStudents').exec(function (err, profile) {
         res.render('profiles/instructors/index', { profile })
     })
 }
 
 function showStudent(req, res) {
-    Profile.findById(req.params.id).populate('instruments').populate('needs').exec(function (err, student) {
+    Profile.findById(req.params.id).populate('instruments').populate('needs').populate('chosenInstructors').exec(function (err, student) {
         res.render('profiles/students/index', { student })
     });
 }
 
-function getAll(req, res) {
-    Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, instructors) {
+async function getAll(req, res) {
+    const student = await Profile.find({ user: req.user._id })
+    await Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, instructors) {
         if (err) return res.redirect(`/profiles/students/${req.user._id}`)
-        res.render('profiles/instructors/list', { instructors })
+        res.render('profiles/instructors/list', { instructors, student: student[0] })
     })
 }
 function showTeacher(req, res) {
@@ -97,12 +95,20 @@ function showTeacher(req, res) {
 
 async function addToStudentProfile(req, res) {
     const instructor = await Profile.findById(req.params.id)
-    const student = await Profile.find({user: req.user._id})
-     await Profile.updateOne
+    const student = await Profile.find({ user: req.user._id })
+    await Profile.updateOne
         ({ user: req.user._id },
             {
                 $addToSet: {
                     chosenInstructors: instructor
+                }
+            }
+        )
+    await Profile.updateOne
+        ({ _id: req.params.id },
+            {
+                $addToSet: {
+                    chosenStudents: student
                 }
             }
         )

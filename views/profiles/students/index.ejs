@@ -5,17 +5,17 @@
             <section id="show-page">
 
                 <div>Name:
-                    <div class="name-input">
+                    <div autocapitalize="words" class="name-input">
                         <%= student.nickname %>
                     </div>
                 </div>
                 <div>Location:
-                    <div class="location-input">
+                    <div autocapitalize="words" class="location-input">
                         <%= student.location %>
                     </div>
                 </div>
                 <div>Bio:
-                    <div class="bio-input">
+                    <div autocapitalize="sentences" class="bio-input">
                         <%= student.bio %>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     <div>
                         <% student.chosenInstructors.forEach(function(i) { %>
 
-                            <%= i %>
+                            <%= i.nickname %>
 
 
                                 <% }) %>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div>Interest:
-                    <div>
+                    <div autocapitalize="words">
                         <%= student.interest %>
                     </div>
                 </div>

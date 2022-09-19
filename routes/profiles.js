@@ -12,12 +12,13 @@ router.post('/new/student', profilesCtrl.createStudentProfile);
 router.get('/instructor/:id', profilesCtrl.showInstructor)
 router.get('/student/:id', profilesCtrl.showStudent)
 
+router.put('/add-instructor/:id', profilesCtrl.addToStudentProfile)
+
 // student viewing a teacher page (different nav bar)
 router.get('/instructors', profilesCtrl.getAll)
 router.get('/instructors/:id', profilesCtrl.showTeacher)
 
 
-router.put('/add-instructor/:id', profilesCtrl.addToStudentProfile)
 
 
 

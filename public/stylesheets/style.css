@@ -91,6 +91,9 @@ main {
   display: block;
 }
 
+
+
+
 .hire {
   display: flex;
   font-size: 28px;
@@ -177,9 +180,6 @@ footer {
 .view-instructors>button {
   text-decoration: none;
 }
-
-
-
 
 
 .landing {
@@ -319,13 +319,11 @@ section>div {
 }
 
 
-.name-input {
+.name-input, .location-input,
+#students, #bio  {
   text-transform: capitalize;
 }
 
-.location-input {
-  text-transform: capitalize;
-}
 
 
 .newInstr {

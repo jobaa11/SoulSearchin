@@ -6,17 +6,17 @@
         <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
                 <div>
-                    <div class="name-input">Name:
+                    <div autocapitalize="words" class="name-input">Name:
                         <%= profile.nickname %>
                     </div>
                 </div>
                 <div>
-                    <div class="location-input">Location:
+                    <div autocapitalize="word" class="location-input">Location:
                         <%= profile.location %>
                     </div>
                 </div>
-                <div>
-                    <div>Bio:
+                <div autocapitalize="words">
+                    <div autocapitalize="sentences" id="bio">Bio:
                         <%= profile.bio %>
                     </div>
                 </div>
@@ -34,10 +34,20 @@
                         <%= profile.genres %>
                     </div>
                 </div>
-                <div>Budget:
-                <div>
-                    $<%= profile.budget %>/HR
+                <div>Students:
+                    <div id="students" autocapitalize="words">
+                        <% profile.chosenStudents.forEach(function(s) { %>
+
+                            <%= s.nickname %>
+
+
+                                <% }) %>
+                    </div>
                 </div>
+                <div>Budget:
+                    <div>
+                        $<%= profile.budget %>/HR
+                    </div>
                 </div>
                 <a class="update-profile-link" href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
             </section>

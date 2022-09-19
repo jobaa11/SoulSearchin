@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// const instructorSchema = new Schema({
-//     instructorId: { type: Schema.Types.ObjectId, ref: 'Profile' } 
-// })
 
 const profileSchema = new Schema({
     nickname: String,
@@ -16,7 +13,7 @@ const profileSchema = new Schema({
     genres: [{ type: String, enum: ['R&B', 'FUNK', 'JAZZ', 'POP', 'ROCK', 'BOSSA NOVA'] }],
     budget: {
         type: Number,
-        required: true
+        // required: true
     },
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },
     needs: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],
@@ -24,6 +21,7 @@ const profileSchema = new Schema({
     interest: String,
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
     chosenInstructors: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
+    chosenStudents: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
 
 }, {
     timestamps: true
