@@ -37,6 +37,11 @@ Hear at Soul Search we allow students to find the right match for them that will
   |:------------:|-----------| 
 
   | <h3>ERD</h3> | <img src="https://trello.com/1/cards/62d9c78e695f9371c02704bb/attachments/62d9c7a736d3f219475272b3/previews/62d9c7a836d3f21947527314/download/USER_PROFILE_ERD.JPG" width="700"/> |
+  
+  </details>
+  
+  <details>
+  
 
   | <h3>ERD</h3> | <img src="https://trello.com/1/cards/62d9c78e695f9371c02704bb/attachments/62d9c7a736d3f219475272b3/previews/62d9c7a836d3f21947527314/download/USER_PROFILE_ERD.JPG" width="700" /> |
 
@@ -54,7 +59,7 @@ Hear at Soul Search we allow students to find the right match for them that will
     src="https://trello.com/c/Xl4P9fK9/11-teacher-user-page-show"
     width="700"
   /> |
->>>>>>> 3ae2cfb (Update readMe.md)
+
 </details>
 
 <details open>
