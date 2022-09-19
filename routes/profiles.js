@@ -17,7 +17,10 @@ router.get('/instructors', profilesCtrl.getAll)
 router.get('/instructors/:id', profilesCtrl.showTeacher)
 
 
-router.put('/instructors/:id', profilesCtrl.addToStudentProfile)
+router.put('/add-instructor/:id', profilesCtrl.addToStudentProfile)
+
+
+
 
 
 //IN PROGRESS - add a view all instuctors and student page so students can add them and instructors can accept them

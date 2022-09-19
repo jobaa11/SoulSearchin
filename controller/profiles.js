@@ -20,7 +20,7 @@ module.exports = {
     getAll,
     showTeacher,
     addToStudentProfile,
-    
+
 
 
 
@@ -95,8 +95,18 @@ function showTeacher(req, res) {
     })
 }
 
-function addToStudentProfile(req, res) {
-    Profile.findById(req.params.id)
+async function addToStudentProfile(req, res) {
+    const instructor = await Profile.findById(req.params.id)
+    const student = await Profile.find({user: req.user._id})
+     await Profile.updateOne
+        ({ user: req.user._id },
+            {
+                $addToSet: {
+                    chosenInstructors: instructor
+                }
+            }
+        )
+    res.redirect(`/profiles/student/${student[0]._id}`)
 }
 
 

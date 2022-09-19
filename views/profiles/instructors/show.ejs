@@ -1,51 +1,52 @@
 <%- include('../../partials/header') %>
 
- 
 
 
-            <section class="show" id="show-page">
-   
-                <div>Name: 
-                <div>
-                    <%= instructor.nickname %>
-                </div>
-                </div>
-                <div>Location: 
-                <div>
-                    <%= instructor.location %>
-                </div>
-                </div>
-                <div>Bio: 
-                <div>
-                    <%= instructor.bio %>
-                </div>
-                </div>
-                <div>Instruments: 
-                <div>
-                    <% instructor.instruments.forEach(function(i) { %>
-                        <div>
-                            <%= i.name %>
-                        </div>
 
-                        <% }) %>
+    <section class="show" id="show-page">
+
+        <div>Name:
+            <div>
+                <%= instructor.nickname %>
+            </div>
+        </div>
+        <div>Location:
+            <div>
+                <%= instructor.location %>
+            </div>
+        </div>
+        <div>Bio:
+            <div>
+                <%= instructor.bio %>
+            </div>
+        </div>
+        <div>Instruments:
+            <div>
+                <% instructor.instruments.forEach(function(i) { %>
+                    <div>
+                        <%= i.name %>
                     </div>
-                </div>
-                <div>Genres: 
-                <div>
-                    <%= instructor.genres %>
-                </div>
-                </div>
-                <div>Budget:
-                <div>
-                    $<%= instructor.budget %>/HR
-                </div>
-                </div>
-                <button class="hire" type="submit">HIRE?</button>
-                <a href="/profiles/instructors">More Instructors</a>
-            </section>
 
-     
+                    <% }) %>
+            </div>
+        </div>
+        <div>Genres:
+            <div>
+                <%= instructor.genres %>
+            </div>
+        </div>
+        <div>Budget:
+            <div>
+                $<%= instructor.budget %>/HR
+            </div>
+        </div>
+        <form action="/profiles/add-instructor/<%= instructor._id %>?_method=PUT" method="POST"><button class="hire"
+                type="submit">HIRE?</button></form>
+        <a href="/profiles/instructors/">More Instructors</a>
+    </section>
 
 
 
-        <%- include('../../partials/nav-footer') %>
+
+
+    <%- include('../../partials/nav-footer') %>
