@@ -15,10 +15,10 @@
 <body>
   <nav>
     <div id="maindiv">
+      <div><img id="logo" src="/images/LOGO.png" s alt="LOGO"></div>
       <ul>
         <% if (user) { %>
           <% if (profile && !profile.isInstructor) { %>
-            <img id="logo" src="/images/LOGO.png" s alt="LOGO">
             <a class="soul" href="/">SoulSearch</a>
             <a class="about" href="/about">ABOUT US</a>
             <a class="contact" href="/contact">CONTACT</a>
@@ -26,7 +26,7 @@
             <a class="logout" href="/logout" class="login">LOG OUT</a>
             
             <% } else if (user && profile && profile.isInstructor) { %>
-              <img id="logo" src="/images/LOGO.png" s alt="LOGO">
+              <!-- <img id="logo" src="/images/LOGO.png" s alt="LOGO"> -->
               <a class="soul" href="/">SoulSearch</a>
               <a class="about" href="/about">ABOUT US</a>
               <a class="contact" href="/contact">CONTACT</a>
@@ -39,7 +39,7 @@
 
                   <% } %>
                     <% if (!user) { %>
-                      <img id="logo" src="/images/LOGO.png" s alt="LOGO">
+                      <!-- <img id="logo" src="/images/LOGO.png" s alt="LOGO"> -->
                       <a class="soul" href="/">SoulSearch</a>
                       <a class="about" href="/about">ABOUT US</a>
                       <a class="contact" href="/contact">CONTACT</a>

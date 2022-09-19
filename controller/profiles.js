@@ -19,6 +19,7 @@ module.exports = {
     showStudent,
     getAll,
     showTeacher,
+    addToStudentProfile,
     
 
 
@@ -29,7 +30,6 @@ module.exports = {
     studentHome,
     delete: deleteMatch,
     deleteStudent,
-    // update,
 }
 
 
@@ -40,14 +40,14 @@ function newProfile(req, res) {
 }
 
 function newInstructorForm(req, res) {
-    newInstructor = new Profile(req.body)
+    const newInstructor = new Profile(req.body)
     Instrument.find({}).populate('name').exec(function (err, instruments) {
         res.render('profiles/new/instructor', { instruments, instructor: newInstructor });
     });
 }
 
 function newStudentForm(req, res) {
-    newStudent = new Profile(req.body)
+    const newStudent = new Profile(req.body)
     Instrument.find({}).populate('name').exec(function (err, instruments) {
         res.render('profiles/new/student', { instruments, student: newStudent });
     });
@@ -95,11 +95,14 @@ function showTeacher(req, res) {
     })
 }
 
+function addToStudentProfile(req, res) {
+    Profile.findById(req.params.id)
+}
 
 
 
 
-
+// IN PROGRESS
 
 
 function updateProfile(req, res) {
@@ -122,29 +125,6 @@ function studentHome(req, res) {
         res.render('profiles/instructors/index', { title: 'Student', profile });
     }))
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function update(req, res) {
-//     Profile.find({ 'user': req.user._id }, (err, student) => {
-//         const profile = new Profile({});
-//         profile.chosenInstructors.push(req.params.id, student);
-//         profile.save((err,) => {
-//             res.redirect('/profiles/student/home');
-//         });
-//     });
-// }
 
 function deleteMatch(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
