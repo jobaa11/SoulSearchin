@@ -98,8 +98,11 @@ Hear at Soul Search we allow students to find the right match for them that will
   >
 </details>
 
+## :fast_forward: Next Steps
+
+### Upcoming Features
 
 - [ ] Add API Intergration
 
-- [ ] Better styling
+- [ ] Improve styling
 
