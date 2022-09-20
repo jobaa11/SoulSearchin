@@ -14,11 +14,10 @@ router.get('/instructor/:id/students', profilesCtrl.viewMyStudents)
 router.get('/instructors/:id', profilesCtrl.showTeacher)
 router.get('/students/:id', profilesCtrl.showPupil)
 router.get('/:id/edit', profilesCtrl.edit)
+router.get('/:id/delete', profilesCtrl.deletePage);
 router.put('/:id', profilesCtrl.updateProfile);
 router.put('/match/:id', profilesCtrl.addAssociation)
 router.delete('/students/:id', profilesCtrl.removePupil);
-
-
-router.delete('/student/:id', profilesCtrl.deleteProfile);
+router.delete('/:id', profilesCtrl.deleteProfile);
 
 module.exports = router;

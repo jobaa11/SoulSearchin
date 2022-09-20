@@ -24,8 +24,9 @@ module.exports = {
     updateProfile,
     viewMyStudents,
     removePupil,
+    deletePage,
 
-    
+
     deleteProfile,
 }
 
@@ -149,8 +150,8 @@ function updateProfile(req, res) {
 };
 
 async function removePupil(req, res) {
-    const teacher = await Profile.findOne({user: req.user._id}) 
-  await Profile.updateOne({ user: req.user._id },
+    const teacher = await Profile.findOne({ user: req.user._id })
+    await Profile.updateOne({ user: req.user._id },
         {
             $pullAll: {
                 chosenStudents: [{ _id: req.params.id }]
@@ -166,11 +167,17 @@ async function removePupil(req, res) {
     )
     res.redirect(`/profiles/instructor/${teacher._id}`)
 
+};
+
+async function deletePage(req, res) {
+    let role;
+    const profile = await Profile.findOne({ _id: req.params.id })
+    profile.isInstructor ? role = 'instructor' : role = 'student'
+    res.render('profiles/delete', { profile, role })
 }
 
 function deleteProfile(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect('/profiles/new/new');
-
+        res.redirect('/profiles/new');
     });
 }
