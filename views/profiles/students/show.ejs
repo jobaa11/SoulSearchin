@@ -21,9 +21,9 @@
         <div>Instruments:
             <div>
                 <% student.instruments.forEach(function(i) { %>
-                        <%= i.name %>
+                    <%= i.name %>
 
-                    <% }) %>
+                        <% }) %>
             </div>
         </div>
         <div>Genres:
@@ -45,6 +45,7 @@
                 <%= student.interest %>
             </div>
         </div>
+        <form action="/profiles/students/<%= student._id %>?_method=DELETE" method="POST"><button class="create-remove">Remove Student</button></form>
     </section>
 
 

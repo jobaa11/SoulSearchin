@@ -13,22 +13,12 @@ router.get('/instructors', profilesCtrl.getAll)
 router.get('/instructor/:id/students', profilesCtrl.viewMyStudents)
 router.get('/instructors/:id', profilesCtrl.showTeacher)
 router.get('/students/:id', profilesCtrl.showPupil)
-router.put('/add-instructor/:id', profilesCtrl.addToStudentProfile)
 router.get('/:id/edit', profilesCtrl.edit)
 router.put('/:id', profilesCtrl.updateProfile);
+router.put('/match/:id', profilesCtrl.addAssociation)
+router.delete('/students/:id', profilesCtrl.removePupil);
 
 
-
-
-
-
-
-//IN PROGRESS 
-// look into bootstrap and materialize and also refactoring for react
-
-
-
-router.delete('/students/:id', profilesCtrl.delete);
 router.delete('/student/:id', profilesCtrl.deleteProfile);
 
 module.exports = router;

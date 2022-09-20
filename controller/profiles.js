@@ -19,14 +19,13 @@ module.exports = {
     getAll,
     showTeacher,
     showPupil,
-    addToStudentProfile,
+    addAssociation,
     edit,
     updateProfile,
     viewMyStudents,
+    removePupil,
 
-
-
-    delete: deleteMatch,
+    
     deleteProfile,
 }
 
@@ -87,7 +86,7 @@ async function getAll(req, res) {
 }
 
 function viewMyStudents(req, res) {
-    Profile.findOne({user: req.user._id}).populate('needs').populate('instruments').populate('chosenStudents').exec(function (err, teacher) {
+    Profile.findOne({ user: req.user._id }).populate('needs').populate('instruments').populate('chosenStudents').exec(function (err, teacher) {
         res.render('profiles/students/list', { teacher })
     })
 }
@@ -103,7 +102,7 @@ function showPupil(req, res) {
     })
 }
 
-async function addToStudentProfile(req, res) {
+async function addAssociation(req, res) {
     const instructor = await Profile.findById(req.params.id)
     const student = await Profile.find({ user: req.user._id })
     await Profile.updateOne
@@ -149,21 +148,29 @@ function updateProfile(req, res) {
     );
 };
 
+async function removePupil(req, res) {
+    const teacher = await Profile.findOne({user: req.user._id}) 
+  await Profile.updateOne({ user: req.user._id },
+        {
+            $pullAll: {
+                chosenStudents: [{ _id: req.params.id }]
+            }
+        }
+    )
+    await Profile.updateOne({ _id: req.params.id },
+        {
+            $pullAll: {
+                chosenInstructors: [{ _id: teacher._id }]
+            }
+        }
+    )
+    res.redirect(`/profiles/instructor/${teacher._id}`)
 
-// IN PROGRESS
-
-
-
-
-
-function deleteMatch(req, res) {
-    Profile.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect('/profiles/student/home');
-    });
 }
+
 function deleteProfile(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect('/profiles/student/home');
+        res.redirect('/profiles/new/new');
 
     });
 }
