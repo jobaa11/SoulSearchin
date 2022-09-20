@@ -19,7 +19,7 @@
 
 <h1>:pencil: Description</h1>
 
-<p>Soul Search was created to bridge the gap between budding musicaians and interested teachers.
+<p>Soul Search was created to bridge the gap between budding musicians and interested teachers.
 Hear at Soul Search we allow students to find the right match for them that will foster continued learning and never-ending growth. Tap in!
 </p>
 </div>
