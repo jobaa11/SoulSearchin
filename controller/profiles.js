@@ -25,8 +25,6 @@ module.exports = {
     viewMyStudents,
     removePupil,
     deletePage,
-
-
     deleteProfile,
 }
 
