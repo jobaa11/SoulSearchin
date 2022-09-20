@@ -6,17 +6,17 @@
         <section class="allapp">
             <div class="app">
                 <label for="nickname">Nickname:</label>
-                <input type="text" id="nickname" placeholder="Enter your username" name="nickname" minlength="3"
+                <input required type="text" id="nickname" placeholder="Enter your username" name="nickname" minlength="3"
                     maxlength="12" autocapitalize="words">
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" placeholder="Enter Location"
+                <input required type="text" id="location" name="location" placeholder="Enter Location"
                     autocomplete="country-name" autocapitalize="words">
                 <label for="bio">Bio:</label>
                 <textarea autocapitalize="sentences" id="bio" name="bio" cols="15" rows="10" placeholder="Tell us about yourself"></textarea>
             </div>
             <div class="app">
                 <label for="instruments">Instruments:</label>
-                <select id="instruments" name="instruments" multiple="3">
+                <select required id="instruments" name="instruments" multiple="3">
                     <% instruments.forEach(function(i) { %>
                         <option value="<%= i._id %>">
                             <%= i.name %>
@@ -24,7 +24,7 @@
                         <% }) %>
                 </select>
                 <label for="needs">What do you want to learn?</label>
-                <select id="needs" name="needs" multiple="multiples">
+                <select required id="needs" name="needs" multiple="multiples">
                     <% instruments.forEach(function(i) { %>
                         <option value="<%= i._id %>">
                             <%= i.name %>
@@ -32,7 +32,7 @@
                         <% }) %>
                 </select>
                 <label for="skillLevel">Skill Level:</label>
-                <select id="skillLevel" name="skillLevel">
+                <select required id="skillLevel" name="skillLevel">
                     <option value="Novice">Novice</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>

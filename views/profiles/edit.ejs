@@ -1,0 +1,37 @@
+
+<%- include('../partials/header') %>
+
+
+    <form id="form1" action="/profiles/<%= profile._id %>/?_method=PUT" method="POST">
+        <section class="allapp">
+            <div class="app">
+                <label for="nickname">Edit Name:</label>
+                <input required type="text" id="nickname" name="nickname" placeholder='<%= profile.nickname %>'
+                autocapitalize="words">
+                <label for="location">Edit Location:</label>
+                <input required type="text" id="location" name="location" placeholder="<%= profile.location %>"
+                    autocomplete="country-name" autocapitalize="words">
+                <label for="bio">Update Bio:</label>
+                <textarea required autocapitalize="sentences" id="bio" name="bio" cols="15"
+                    rows="10" placeholder="<%= profile.bio %>"></textarea>
+            </div>
+            <div class="app">
+                <label for="instruments">Update/Add Instruments:</label>
+                <select required id="instruments" name="instruments" multiple="3">
+                    <% instruments.forEach(function(i) { %>
+                        <option selected value="<%= i._id %>">
+                            <%= i.name %>
+                        </option>
+                        <% }) %>
+                </select>
+
+                <label for="budget">Budget: (Teachers) </label>
+                <input type="number" name="budget" id="budget" placeholder="$<%= profile.budget %>/hr">
+            </div>
+        </section>
+        <button type="submit">UPDATE</button>
+    </form>
+
+
+
+    <%- include('../partials/footer') %>

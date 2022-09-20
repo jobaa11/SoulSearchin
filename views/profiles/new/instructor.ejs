@@ -6,16 +6,16 @@
         <section class="allapp">
             <div class="app">
                 <label for="nickname">Nickname:</label>
-                <input type="text" id="nickname" placeholder="Enter your username" name="nickname" autocomplete="off" autocapitalize="words">
+                <input required type="text" id="nickname" placeholder="Enter your username" name="nickname" autocomplete="off" autocapitalize="words">
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" placeholder="Enter City/State"
+                <input required type="text" id="location" name="location" placeholder="Enter City/State"
                     autocomplete="country-name" autocapitalize="words">
                 <label for="bio">Bio:</label>
                 <textarea autocapitalize="on" id="bio" name="bio" cols="15" rows="10" placeholder="Tell us about yourself"></textarea>
             </div>
             <div class="app">
                 <label for="instruments">Instruments:</label>
-                <select id="instruments" name="instruments" multiple="3">
+                <select required id="instruments" name="instruments" multiple="3">
                     <% instruments.forEach(function(i) { %>
                         <option value="<%= i._id %>">
                             <%= i.name %>
@@ -24,7 +24,7 @@
                 </select>
 
                 <label for="genres">Styles Taught:</label>
-                <select id="genres" name="genres">
+                <select required id="genres" name="genres">
                     <option value="R&B">R&B</option>
                     <option value="FUNK">Funk</option>
                     <option value="JAZZ">Jazz</option>
@@ -33,7 +33,7 @@
                     <option value="BOSSA">Bossa Nova</option>
                 </select>
                 <label for="budget">Budget: </label>
-                <input type="number" name="budget" id="budget">
+                <input required type="number" name="budget" id="budget">
             </div>
         </section>
         <input type="submit" value="submit">

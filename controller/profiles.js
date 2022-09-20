@@ -19,16 +19,15 @@ module.exports = {
     getAll,
     showTeacher,
     addToStudentProfile,
-
-
-
-
-
     edit,
     updateProfile,
-    studentHome,
+
+
+
+
+
     delete: deleteMatch,
-    deleteStudent,
+    deleteProfile,
 }
 
 
@@ -115,39 +114,41 @@ async function addToStudentProfile(req, res) {
     res.redirect(`/profiles/student/${student[0]._id}`)
 }
 
+async function edit(req, res) {
+    const profile = await Profile.findOne({ _id: req.params.id, user: req.user._id })
+    Instrument.find({}).populate('name').exec(function (err, instruments) {
+        res.render('profiles/edit', { profile, instruments });
+    });
+}
 
-
-
+function updateProfile(req, res) {
+    let role;
+    Profile.findOneAndUpdate(
+        { _id: req.params.id, user: req.user._id },
+        req.body,
+        { new: true },
+        function (err, profile) {
+            profile.isInstructor ?
+                role = 'instructor'
+                :
+                role = 'student'
+            if (err) return console.log(err)
+            res.redirect(`/profiles/${role}/${profile._id}`);
+        }
+    );
+};
 // IN PROGRESS
 
 
-function updateProfile(req, res) {
-    Profile.updateOne({ user: req.params.id }, function (err, profile) {
-        profile.save(function (err) {
-            if (err) return console.log(err)
-            res.redirect('/profiles/instructor/home');
-        });
-    });
-};
 
-function edit(req, res) {
-    const profile = Profile.findById(req.params.id);
-    Instrument.find({}).populate('name').exec(function (err, instruments) {
-        res.render('profiles/instructors/edit', { profile, instruments });
-    });
-}
-function studentHome(req, res) {
-    Profile.find({ isInstructor: true }, (function (err, profile) {
-        res.render('profiles/instructors/index', { title: 'Student', profile });
-    }))
-}
+
 
 function deleteMatch(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
         res.redirect('/profiles/student/home');
     });
 }
-function deleteStudent(req, res) {
+function deleteProfile(req, res) {
     Profile.findByIdAndDelete(req.params.id, function (err) {
         res.redirect('/profiles/student/home');
 

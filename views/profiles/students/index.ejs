@@ -1,71 +1,72 @@
 <%- include('../../partials/header') %>
 
 
-        <% if (user && student) { %>
-            <section id="show-page">
+    <% if (user && student) { %>
+        <section id="show-page">
 
-                <div>Name:
-                    <div autocapitalize="words" class="name-input">
-                        <%= student.nickname %>
-                    </div>
+            <div>Name:
+                <div autocapitalize="words" class="name-input">
+                    <%= student.nickname %>
                 </div>
-                <div>Location:
-                    <div autocapitalize="words" class="location-input">
-                        <%= student.location %>
-                    </div>
+            </div>
+            <div>Location:
+                <div autocapitalize="words" class="location-input">
+                    <%= student.location %>
                 </div>
-                <div>Bio:
-                    <div autocapitalize="sentences" class="bio-input">
-                        <%= student.bio %>
-                    </div>
+            </div>
+            <div>Bio:
+                <div autocapitalize="sentences" class="bio-input">
+                    <%= student.bio %>
                 </div>
-                <div>Instruments:
-                    <div>
-                        <% student.instruments.forEach(function(i) { %>
+            </div>
+            <div>Instruments:
+                <div>
+                    <% student.instruments.forEach(function(i) { %>
 
-                            <%= i.name %>
+                        <%= i.name %>
 
-                                <% }) %>
-                    </div>
+                            <% }) %>
                 </div>
-                <div>Genres:
-                    <div>
-                        <%= student.genres %>
-                    </div>
+            </div>
+            <div>Genres:
+                <div>
+                    <%= student.genres %>
                 </div>
-                <div>Skill:
-                    <div>
-                        <%= student.skillLevel %>
-                    </div>
+            </div>
+            <div>Skill:
+                <div>
+                    <%= student.skillLevel %>
                 </div>
-                <div>Instructors:
-                    <div>
-                        <% student.chosenInstructors.forEach(function(i) { %>
+            </div>
+            <div>Instructors:
+                <div>
+                    <% student.chosenInstructors.forEach(function(i) { %>
 
-                            <%= i.nickname %>
+                        <%= i.nickname %>
 
 
-                                <% }) %>
-                    </div>
+                            <% }) %>
                 </div>
-                <div>Needs:
-                    <div>
-                        <% student.needs.forEach(function(need) { %>
+            </div>
+            <div>Needs:
+                <div>
+                    <% student.needs.forEach(function(need) { %>
 
-                            <%= need.name %>
+                        <%= need.name %>
 
-                                <% }) %>
-                    </div>
+                            <% }) %>
                 </div>
-                <div>Interest:
-                    <div autocapitalize="words">
-                        <%= student.interest %>
-                    </div>
+            </div>
+            <div>Interest:
+                <div autocapitalize="words">
+                    <%= student.interest %>
                 </div>
-                <a href="/profiles/instructors">View Instructors</a>
-            </section>
+            </div>
+            <a href="/profiles/instructors">View Instructors</a>
+            <a href="/profiles/<%= student._id %>/edit">Update Profile</a>
+        </section>
 
-            <% } %>
+        <% } %>
 
 
-                <%- include('../../partials/nav-footer') %>
+            <%- include('../../partials/nav-footer') %>
