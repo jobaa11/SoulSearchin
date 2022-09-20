@@ -42,10 +42,12 @@
                 <div>
                     <% student.chosenInstructors.forEach(function(i) { %>
 
-                        <%= i.nickname %>
+                        <a href="/profiles/instructors/<%= i._id%>">
+                            <%= i.nickname %>
+                        </a>
 
 
-                            <% }) %>
+                        <% }) %>
                 </div>
             </div>
             <div>Needs:

@@ -41,10 +41,6 @@ body {
   font: 20px;
 }
 
-
-
-
-
 a {
   flex-direction: row;
   text-decoration: none;
@@ -55,9 +51,6 @@ a:active {
   text-decoration: underline;
 }
 
-
-
-
 button {
   font-size: 30px;
   color: #ffffff;
@@ -67,7 +60,6 @@ button {
   text-transform: uppercase;
 }
 
-
 main {
   display: grid;
   justify-content: center;
@@ -76,6 +68,7 @@ main {
   padding: 10px;
   margin-top: 30px;
 }
+
 .view-instructors {
   display: grid;
   grid-template-rows: 2fr 2fr 2fr 2fr;
@@ -90,8 +83,6 @@ main {
 .show>div {
   display: block;
 }
-
-
 
 
 .hire {
@@ -132,8 +123,6 @@ main {
 }
 
 
-
-
 footer {
   display: flex;
   align-items: center;
@@ -149,6 +138,7 @@ footer {
   height: 30px;
   letter-spacing: -1px;
   background-color: blanchedalmond;
+  width: 100%;
 }
 
 .view-instructors-btn>.create {
@@ -210,7 +200,6 @@ h2 {
   font-style: italic;
 }
 
-
 a {
   color: #bbcacf;
 }
@@ -223,8 +212,6 @@ button {
   font-size: xx-large;
   font-weight: bolder;
 }
-
-
 
 #instrument-btn {
   font-size: 30px;
@@ -323,7 +310,6 @@ section>div {
 #students, #bio  {
   text-transform: capitalize;
 }
-
 
 
 .newInstr {

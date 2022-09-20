@@ -37,12 +37,15 @@
                 <div>Students:
                     <div id="students" autocapitalize="words">
                         <% profile.chosenStudents.forEach(function(s) { %>
+                            <a href="/profiles/students/<%= s._id%>">
+                                <%= s.nickname %>
+                            </a>
 
-                            <%= s.nickname  %>
-
-
-                                <% }) %>
+                            <% }) %>
                     </div>
+                </div>
+
+              <div> <a href="/profiles/instructor/<%= profile._id%>/students">View All Students</a> 
                 </div>
                 <div>Budget:
                     <div>

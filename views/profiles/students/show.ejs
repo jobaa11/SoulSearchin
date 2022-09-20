@@ -1,0 +1,51 @@
+<%- include('../../partials/header') %>
+
+
+    <section class="show" id="show-page">
+
+        <div>Name:
+            <div>
+                <%= student.nickname %>
+            </div>
+        </div>
+        <div>Location:
+            <div>
+                <%= student.location %>
+            </div>
+        </div>
+        <div>Bio:
+            <div>
+                <%= student.bio %>
+            </div>
+        </div>
+        <div>Instruments:
+            <div>
+                <% student.instruments.forEach(function(i) { %>
+                        <%= i.name %>
+
+                    <% }) %>
+            </div>
+        </div>
+        <div>Genres:
+            <div>
+                <%= student.genres %>
+            </div>
+        </div>
+        <div>Needs:
+            <div>
+                <% student.needs.forEach(function(need) { %>
+
+                    <%= need.name %>
+
+                        <% }) %>
+            </div>
+        </div>
+        <div>Interest:
+            <div>
+                <%= student.interest %>
+            </div>
+        </div>
+    </section>
+
+
+    <%- include('../../partials/nav-footer') %>

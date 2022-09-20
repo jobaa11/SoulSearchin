@@ -24,6 +24,15 @@
                         </option>
                         <% }) %>
                 </select>
+                <label for="genres">Genres:</label>
+                <select required id="genres" name="genres">
+                    <option value="R&B">R&B</option>
+                    <option value="FUNK">Funk</option>
+                    <option value="JAZZ">Jazz</option>
+                    <option value="POP">Pop</option>
+                    <option value="ROCK">Rock</option>
+                    <option value="BOSSA">Bossa Nova</option>
+                </select>
 
                 <label for="budget">Budget: (Teachers) </label>
                 <input type="number" name="budget" id="budget" placeholder="$<%= profile.budget %>/hr">

@@ -18,11 +18,11 @@ module.exports = {
     showStudent,
     getAll,
     showTeacher,
+    showPupil,
     addToStudentProfile,
     edit,
     updateProfile,
-
-
+    viewMyStudents,
 
 
 
@@ -80,15 +80,26 @@ function showStudent(req, res) {
 }
 
 async function getAll(req, res) {
-    const student = await Profile.find({ user: req.user._id })
     await Profile.find({ isInstructor: true }).populate('instruments').exec(function (err, instructors) {
         if (err) return res.redirect(`/profiles/students/${req.user._id}`)
-        res.render('profiles/instructors/list', { instructors, student: student[0] })
+        res.render('profiles/instructors/list', { instructors })
     })
 }
+
+function viewMyStudents(req, res) {
+    Profile.findOne({user: req.user._id}).populate('needs').populate('instruments').populate('chosenStudents').exec(function (err, teacher) {
+        res.render('profiles/students/list', { teacher })
+    })
+}
+
 function showTeacher(req, res) {
     Profile.findById(req.params.id).populate('instruments').exec(function (err, instructor) {
         res.render('profiles/instructors/show', { instructor })
+    })
+}
+function showPupil(req, res) {
+    Profile.findById(req.params.id).populate('instruments').populate('needs').exec(function (err, student) {
+        res.render('profiles/students/show', { student })
     })
 }
 
@@ -137,6 +148,8 @@ function updateProfile(req, res) {
         }
     );
 };
+
+
 // IN PROGRESS
 
 

@@ -1,0 +1,26 @@
+<%- include('../../partials/header') %>
+
+    <% if (user && teacher) { %>
+        <main class="view-instructors">
+            <% teacher.chosenStudents.forEach(function(student) { %>
+                <section class="all-instructors" id="show-page">
+                    <div class="">Name:&nbsp;
+                        <div class="name-input">
+                            <%= student.nickname %>
+                        </div>
+                    </div>
+                    <div> Bio:&nbsp;
+                        <div class="bio-input">
+                            <%= student.bio %>
+                        </div>
+                    </div>
+                    <a class="view-instructors-btn" href="/profiles/students/<%= student._id %>"><button
+                            class="create">View Student
+                            Profile</button></a>
+                </section>
+                <% })%>
+        </main>
+
+        <% } %>
+
+            <%- include('../../partials/nav-footer') %>
