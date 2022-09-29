@@ -90,9 +90,10 @@ function viewMyStudents(req, res) {
     })
 }
 
-function showTeacher(req, res) {
+async function showTeacher(req, res) {
+    const student = await Profile.findOne({user: req.user._id})
     Profile.findById(req.params.id).populate('instruments').exec(function (err, instructor) {
-        res.render('profiles/instructors/show', { instructor })
+        res.render('profiles/instructors/show', { instructor, student })
     })
 }
 function showPupil(req, res) {
@@ -141,7 +142,7 @@ function updateProfile(req, res) {
                 role = 'instructor'
                 :
                 role = 'student'
-            if (err) return console.log(err)
+            if (err) return console.error(err)
             res.redirect(`/profiles/${role}/${profile._id}`);
         }
     );

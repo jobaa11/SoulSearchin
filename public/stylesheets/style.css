@@ -383,7 +383,10 @@ section>div {
 }
 
 .login img {
-  height: 30px;
+  padding-top: 14px;
+  padding-left: 7px;
+  bottom: 100px;
+  height: 25px;
   justify-content: flex-end;
 }
 

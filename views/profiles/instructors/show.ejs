@@ -23,11 +23,11 @@
         <div>Instruments:
             <div>
                 <% instructor.instruments.forEach(function(i) { %>
-                  
-                        <%= i.name %>
-                  
 
-                    <% }) %>
+                    <%= i.name %>
+
+
+                        <% }) %>
             </div>
         </div>
         <div>Genres:
@@ -40,9 +40,9 @@
                 $<%= instructor.budget %>/HR
             </div>
         </div>
-        <form action="/profiles/match/<%= instructor._id %>?_method=PUT" method="POST"><button class="hire"
-                type="submit">HIRE?</button></form>
-        <a href="/profiles/instructors/">More Instructors</a>
+        <form <%- student.chosenInstructors.includes(instructor._id) ? 'hidden' : '' %> action="/profiles/match/<%=
+                instructor._id %>?_method=PUT" method="POST"><button class="hire" type="submit">HIRE?</button></form>
+        <a  href="/profiles/instructors/">More Instructors</a>
     </section>
 
 
