@@ -2,9 +2,9 @@
 
     <h2>DELETE PAGE</h2>
 
-    <h3>Are you sure you want to delete your Profile?</h3>
+    <h3 style="text-align: center">Are you sure you want to delete your Profile?</h3>
 
     <button class="create"><a style="color:black" href="/profiles/<%= role %>/<%= profile._id %>">NO</a></button>
-    <form class="delete" action="/profiles/<%= profile._id %>?_method=DELETE" method="POST"><button class="create-delete">DELETE</button></form>
+    <form class="delete" action="/profiles/<%= profile._id %>?_method=DELETE" method="POST"><button style="color: red;" class="create-delete">DELETE</button></form>
 
     <%- include('../partials/footer') %>

@@ -3,7 +3,6 @@ const Instrument = require('../models/instrument');
 
 
 
-// ADD ZIP CODE API (ADD PROPERTY TO MODEL AND FORM)
 // import fetch from 'node-fetch';
 // const rootUrl = fetch('http://ziptasticapi.com/zipcode')
 

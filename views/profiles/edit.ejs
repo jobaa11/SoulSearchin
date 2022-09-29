@@ -37,7 +37,8 @@
                 <input type="number" name="budget" id="budget" placeholder="$<%= profile.budget %>/hr">
             </div>
         </section>
-        <button class="create-edit" type="submit">UPDATE</button>
+        <button style="margin-top: 30px" class="create-edit" type="submit">UPDATE</button> <br>
+        <a style="margin-left: 160px; color:black" href="/profiles/<%- profile.isInstructor ? 'instructor' : 'student' %>/<%= profile._id %>" type="submit">CANCEL</a>
     </form>
 
 

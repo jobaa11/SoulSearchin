@@ -18,35 +18,62 @@
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-text navbar-nav navbar-nav-scroll navbar-expand-sm bg-transparent">
-    <div class="" id="maindiv">
-      <div><a href="/"><img id="logo" src="/images/LOGO.png" s alt="LOGO"></a></div>
-      <% if (user) { %>
-        <% if (profile && !profile.isInstructor) { %>
-          <a class="soul" href="/">SoulSearch</a>     
-            <a class="about" href="/about">ABOUT US</a>
-            <a class="contact" href="/contact">CONTACT</a>
-            <a class="home" href=/profiles/student/<%=profile._id %>>VIEW PROFILE</a>
-            <a class="logout" href="/logout" class="login">LOG OUT</a>
-          <% } else if (profile && profile.isInstructor) { %>
-            <a class="soul" href="/">SoulSearch</a>
-            <a class="about" href="/about">ABOUT US</a>
-            <a class="contact" href="/contact">CONTACT</a>
-            <a class="home" href=/profiles/instructor/<%=profile._id %>>VIEW PROFILE</a>
-            <a href="/logout" class="login">LOG OUT</a>
+  <nav class="navbar navbar-text navbar-expand-sm  bg-transparent">
+    <div class="container-fluid" id="maindiv">
+      <a href="/"><img id="logo" class="navbar-brand" src="/images/LOGO.png" s alt="LOGO"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if (user) { %>
+            <% if (profile && !profile.isInstructor) { %>
+              <li class="nav-item">
+                <a class="soul nav-link" href="/">SoulSearch</a>
+              </li>
+              <li class="nav-item">
+                <a class="about nav-link" href="/about">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="contact nav-link" href="/contact">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a class="home nav-link" href=/profiles/student/<%=profile._id %>>VIEW PROFILE</a>
+              </li>
+              <li class="nav-item">
+                <a class="logout nav-link" href="/logout" class="login">LOG OUT</a>
+              </li>
+              <% } else if (profile && profile.isInstructor) { %>
+                <li class="nav-item">
+                  <a class="soul nav-link" href="/">SoulSearch</a>
+                </li>
+                <li class="nav-item">
+                  <a class="about nav-link" href="/about">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                  <a class="contact nav-link" href="/contact">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                <a class="home nav-link" href=/profiles/instructor/<%=profile._id %>>VIEW PROFILE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="logout nav-link" href="/logout" class="login">LOG OUT</a>
+                </li>
 
-            <% } else { %>
-              <% } %>
-
-                <% } %>
-                  <% if (!user) { %>
-                    <!-- <img id="logo" src="/images/LOGO.png" s alt="LOGO"> -->
-                    <a class="soul" href="/">SoulSearch</a>
-                    <a class="about" href="/about">ABOUT US</a>
-                    <a class="contact" href="/contact">CONTACT</a>
-                    <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
+                <% } else { %>
+                  <% } %>
 
                     <% } %>
-                      </ul>
+                      <% if (!user) { %>
+                        <!-- <img id="logo" src="/images/LOGO.png" s alt="LOGO"> -->
+                        <a class="soul" href="/">SoulSearch</a>
+                        <a class="about" href="/about">ABOUT US</a>
+                        <a class="contact" href="/contact">CONTACT</a>
+                        <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
+
+                        <% } %>
+        </ul>
+      </div>
   </nav>
   <main>
