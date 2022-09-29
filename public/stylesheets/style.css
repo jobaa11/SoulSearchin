@@ -398,8 +398,7 @@ nav {
 
 #maindiv {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: baseline;
 }
 
 nav>ul {
@@ -416,4 +415,12 @@ nav>ul {
   align-items:stretch;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.navbar-nav {
+  align-items: flex-end;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
 }

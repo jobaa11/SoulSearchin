@@ -55,7 +55,7 @@
                   <a class="contact nav-link" href="/contact">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                <a class="home nav-link" href=/profiles/instructor/<%=profile._id %>>VIEW PROFILE</a>
+                  <a class="home nav-link" href=/profiles/instructor/<%=profile._id %>>VIEW PROFILE</a>
                 </li>
                 <li class="nav-item">
                   <a class="logout nav-link" href="/logout" class="login">LOG OUT</a>
@@ -66,12 +66,18 @@
 
                     <% } %>
                       <% if (!user) { %>
-                        <!-- <img id="logo" src="/images/LOGO.png" s alt="LOGO"> -->
-                        <a class="soul" href="/">SoulSearch</a>
-                        <a class="about" href="/about">ABOUT US</a>
-                        <a class="contact" href="/contact">CONTACT</a>
-                        <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
-
+                        <li class="nav-item">
+                          <a class="soul nav-link" href="/">SoulSearch</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="about nav-link" href="/about">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="contact nav-link" href="/contact">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="/auth/google" class="login">LOG IN<img style="margin-bottom: 15px" src="https://i.imgur.com/FHjYyi0.png"></a>
+                      </li>
                         <% } %>
         </ul>
       </div>

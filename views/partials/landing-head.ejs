@@ -6,54 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <title>SoulSearch</title>
 </head>
 
 <body>
-  <nav class="landing-nav">
+  <nav class="landing-nav navbar ">
     <div id="main-div">
-      <ul>
-        <% if (user) { %>
-          <% if (profile && !profile.isInstructor) { %>
-            <a class="soul" href="/">SoulSearch</a>
-            <a class="about" href="/about">ABOUT US</a>
-            <a class="contact" href="/contact">CONTACT</a>
-            <a class="home" href=/profiles/student/<%= profile._id %>>VIEW PROFILE</a>
-            <a class="logout" href="/logout" class="login">LOG OUT</a>
-            
-            <% } else if (profile && profile.isInstructor) { %>
-              <a class="soul" href="/">SoulSearch</a>
+
+      <div  id="navbarTogglerDemo02">
+        <ul style="font-size: 15px">
+          <% if (user) { %>
+            <% if (profile && !profile.isInstructor) { %>
               <a class="about" href="/about">ABOUT US</a>
               <a class="contact" href="/contact">CONTACT</a>
-              <a class="home" href=/profiles/instructor/<%= profile._id %>>VIEW PROFILE</a>
-              <a href="/logout" class="login">LOG OUT</a>
-              
-              <% } else { %>
-                <% } %>
-                
-                <% } %>
-                <% if (!user) { %>
-                  <a class="soul" href="/">SoulSearch</a>
-                  <a class="about" href="/about">ABOUT US</a>
-                  <a class="contact" href="/contact">CONTACT</a>
-                  <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
-                  
-                  <% } %>
-      </ul>
-    </div>
-    <div>
-      <div>
-        <% if (user) { %>
-          <% if (profile && profile.isInstructor) { %>
-          
+              <a class="home" href=/profiles/student/<%=profile._id %>>VIEW PROFILE</a>
+              <a class="logout" href="/logout" class="login">LOG OUT</a>
 
-            <% } %>
-              <% } else { %>
-                <% } %>
+              <% } else if (profile && profile.isInstructor) { %>
+                <a class="about" href="/about">ABOUT US</a>
+                <a class="contact" href="/contact">CONTACT</a>
+                <a class="home" href=/profiles/instructor/<%=profile._id %>>VIEW PROFILE</a>
+                <a href="/logout" class="login">LOG OUT</a>
+
+                <% } else { %>
+                  <% } %>
+
+                    <% } %>
+                      <% if (!user) { %>
+                        <a class="soul" href="/">SoulSearch</a>
+                        <a class="about" href="/about">ABOUT US</a>
+                        <a class="contact" href="/contact">CONTACT</a>
+                        <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
+
+                        <% } %>
+        </ul>
       </div>
     </div>
+
   </nav>
   <main>
