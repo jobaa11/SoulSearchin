@@ -15,7 +15,6 @@ function update(req, res) {
     const instrument = new Instrument(req.body,
         function (err, instru) {
             instrument.save(function (err, music) {
-                console.log(instru);
                 res.redirect('/instruments');
             })
         })

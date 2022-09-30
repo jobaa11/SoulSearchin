@@ -1,17 +1,17 @@
 <%- include('../../partials/header') %>
 
     <% if (user && instructors) { %>
-        <main class="view-instructors">
+        <main class="container text-center">
             <% instructors.forEach(function(instructor) { %>
-                <section class="all-instructors" id="show-page">
-                    <div class="">Name:&nbsp;
+                <section class="all-instructors row" id="show-page">
+                    <div class="col-sm-2">Name:&nbsp;
                         <div class="name-input">
                             <%= instructor.nickname %>
                         </div>
                     </div>
                     <div> Instruments:&nbsp;
                         <% instructor.instruments.forEach(function(instrument) { %>
-                            <div>
+                            <div class="instrument-box">
                                 <%=instrument.name%>
                             </div> &nbsp;
                             <%})%>
@@ -24,5 +24,5 @@
         </main>
 
         <% } %>
-        
+
             <%- include('../../partials/nav-footer') %>

@@ -1,18 +1,19 @@
 <%- include('../../partials/header') %>
 
 
-<h1 class="sign">Student</h1>
+    <h1 class="sign">Student</h1>
     <form id="form2" action="/profiles/new/student" method="POST">
         <section class="allapp">
             <div class="app">
                 <label for="nickname">Nickname:</label>
-                <input required type="text" id="nickname" placeholder="Enter your username" name="nickname" minlength="3"
-                    maxlength="12" autocapitalize="words">
+                <input required type="text" id="nickname" placeholder="Enter your username" name="nickname"
+                    minlength="3" maxlength="12" autocapitalize="words">
                 <label for="location">Location:</label>
                 <input required type="text" id="location" name="location" placeholder="Enter Location"
                     autocomplete="country-name" autocapitalize="words">
                 <label for="bio">Bio:</label>
-                <textarea autocapitalize="sentences" id="bio" name="bio" cols="15" rows="10" placeholder="Tell us about yourself"></textarea>
+                <textarea autocapitalize="on" id="bio" name="bio" cols="15" rows="10"
+                    placeholder="Tell us about yourself"></textarea>
             </div>
             <div class="app">
                 <label for="instruments">Instruments:</label>
@@ -40,7 +41,8 @@
                     <option value="Virtuoso">Virtuoso</option>
                 </select>
                 <label for="interest">Interest</label>
-                <textarea autocapitalize="words" name="interest" id="interest" cols="15" rows="2" placeholder="Place Interest Here"></textarea>
+                <textarea autocapitalize="words" name="interest" id="interest" cols="15" rows="2"
+                    placeholder="Place Interest Here"></textarea>
                 <!-- <input type="number" name="budget"> -->
             </div>
         </section>

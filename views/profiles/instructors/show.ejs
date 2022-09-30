@@ -42,7 +42,9 @@
         </div>
         <form <%- student.chosenInstructors.includes(instructor._id) ? 'hidden' : '' %> action="/profiles/match/<%=
                 instructor._id %>?_method=PUT" method="POST"><button class="hire" type="submit">HIRE?</button></form>
-        <a  href="/profiles/instructors/">More Instructors</a>
+        <p class="assigned-teacher" <%- student.chosenInstructors.includes(instructor._id) ? '' : 'hidden' %> >Status:
+            Assigned Teacher</p>
+        <a href="/profiles/instructors/">More Instructors</a>
     </section>
 
 

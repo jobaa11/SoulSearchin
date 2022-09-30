@@ -7,7 +7,7 @@
             <section id="show-page">
                 <div>
                     <div autocapitalize="words" class="name-input">Name:
-                        <%= profile.nickname %>
+                        <%= profile.nickname %> (Instructor)
                     </div>
                 </div>
                 <div>
@@ -23,10 +23,10 @@
                 <div>Instruments:
                     <div>
                         <% profile.instruments.forEach(function(instrument) { %>
-
-                            <%= instrument.name %>
-
-                                <% }) %>
+                            <div class="instrument-box">
+                                <%= instrument.name %>
+                            </div>
+                            <% }) %>
                     </div>
                 </div>
                 <div>Genres:
@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-              <div> <a href="/profiles/instructor/<%= profile._id%>/students">View All Students</a> 
+                <div> <a href="/profiles/instructor/<%= profile._id%>/students">View All Students</a>
                 </div>
                 <div>Budget:
                     <div>

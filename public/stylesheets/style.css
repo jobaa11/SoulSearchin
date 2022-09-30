@@ -14,22 +14,33 @@
 html {
   height: 100%;
   margin: 0;
+  width: 100%;
   padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+ 
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    background-size: 100% 100%;
+  }
 }
 
 .new-head {
-  background-image: url(/images/steve-harvey-QWUCeS2qVoM-unsplash.jpg);
+  background-image: url(/images/steve-harvey-QWUCeS2qVoM-unsplash.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-blend-mode: overlay;
+  
 }
 
 .landing-head {
   background-image: url(/images/andrey-konstantinov-drir5tDCWF4-unsplash.jpg);
+
 }
 
 body {
@@ -38,8 +49,10 @@ body {
   justify-items: center;
   align-items: center;
   min-height: 100%;
+  width: 100%;
   margin: 0;
   font: 20px;
+  
 }
 
 a {
@@ -79,6 +92,20 @@ main {
   margin: 20px;
   padding: 10px;
   margin-top: 30px;
+}
+
+.instrument-box {
+  display: inline-block;
+  border: 1px dashed rgba(0, 0, 0, 0.13);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.assigned-teacher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .show>div {
@@ -285,7 +312,6 @@ button {
 }
 
 
-
 #show-page>div {
   display: flex;
   width: 300px;
@@ -325,6 +351,10 @@ button {
   margin: 0;
 }
 
+.signup {
+  margin-top: 240px;
+}
+
 section>.app,
 section>div {
   display: grid;
@@ -345,7 +375,6 @@ section>div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .newStu {
@@ -364,17 +393,14 @@ section>div {
 }
 
 .role {
-  display: grid;
   font-family: fantasy;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 10vmin;
-  color: rgb(255, 182, 25);
-  height: 250px;
+  /* color: rgb(255, 182, 25); */
+  color: rgb(248, 247, 246);
   border: 2px;
-
+  margin: 0;
 }
+
 
 #logo {
   height: 75px;
@@ -412,7 +438,7 @@ nav>ul {
 }
 
 .navbar {
-  align-items:stretch;
+  align-items: stretch;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }

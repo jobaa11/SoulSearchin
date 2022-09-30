@@ -6,7 +6,7 @@
 
             <div>Name:
                 <div autocapitalize="words" class="name-input">
-                    <%= student.nickname %>
+                    <%= student.nickname %> (student)
                 </div>
             </div>
             <div>Location:
@@ -22,10 +22,10 @@
             <div>Instruments:
                 <div>
                     <% student.instruments.forEach(function(i) { %>
-
-                        <%= i.name %>
-
-                            <% }) %>
+                        <div class="instrument-box">
+                            <%= i.name %>
+                        </div>
+                        <% }) %>
                 </div>
             </div>
             <div>Genres:
@@ -53,10 +53,10 @@
             <div>Needs:
                 <div>
                     <% student.needs.forEach(function(need) { %>
-
-                        <%= need.name %>
-
-                            <% }) %>
+                        <div class="instrument-box">
+                            <%= need.name %>
+                        </div>
+                        <% }) %>
                 </div>
             </div>
             <div>Interest:
