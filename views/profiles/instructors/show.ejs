@@ -1,8 +1,5 @@
 <%- include('../../partials/header') %>
 
-
-
-
     <section class="show" id="show-page">
 
         <div>Name:
@@ -12,7 +9,9 @@
         </div>
         <div>Location:
             <div>
-                <%= instructor.location %>
+                <%= location.city %>
+                    <%= location.state %>,
+                        <%= location.country %>
             </div>
         </div>
         <div>Bio:
@@ -25,7 +24,6 @@
                 <% instructor.instruments.forEach(function(i) { %>
 
                     <%= i.name %>
-
 
                         <% }) %>
             </div>
@@ -47,5 +45,4 @@
         <a href="/profiles/instructors/">More Instructors</a>
     </section>
 
-
-    <%- include('../../partials/nav-footer') %>
+    <%- include('../../partials/footer') %>

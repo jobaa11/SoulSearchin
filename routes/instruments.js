@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const instrumentsRouter = require('../controller/instruments');
+const instrumentsCtrl = require('../controller/instruments');
 
+router.get('/', instrumentsCtrl.addInstrument);
 
-router.get('/', instrumentsRouter.addInstrument);
-
-router.post('/', instrumentsRouter.update);
-
+router.post('/', instrumentsCtrl.update);
 
 module.exports = router;

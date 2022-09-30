@@ -18,5 +18,4 @@ function update(req, res) {
                 res.redirect('/instruments');
             })
         })
-
 }

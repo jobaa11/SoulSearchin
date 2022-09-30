@@ -1,11 +1,6 @@
 const Profile = require('../models/profile');
 const Instrument = require('../models/instrument');
-
-
-
-// import fetch from 'node-fetch';
-// const rootUrl = fetch('http://ziptasticapi.com/zipcode')
-
+const fetch = require('node-fetch')
 
 module.exports = {
     newProfile,
@@ -27,12 +22,12 @@ module.exports = {
     deleteProfile,
 }
 
-
 function newProfile(req, res) {
     res.render('profiles/new/new');
 }
 
 function newInstructorForm(req, res) {
+    console.log(req)
     const newInstructor = new Profile(req.body)
     Instrument.find({}).populate('name').exec(function (err, instruments) {
         res.render('profiles/new/instructor', { instruments, instructor: newInstructor });
@@ -64,15 +59,23 @@ function createStudentProfile(req, res) {
     })
 };
 
-function showInstructor(req, res) {
-    Profile.findById(req.params.id).populate('instruments').populate('chosenStudents').exec(function (err, profile) {
-        res.render('profiles/instructors/index', { profile })
+async function showInstructor(req, res) {
+    await Profile.findById(req.params.id).populate('instruments').populate('chosenStudents').exec(function (err, profile) {
+        const url = fetch(`http://ziptasticapi.com/${profile.location}`)
+            .then(res => res.json())
+            .then(location => {
+                res.render('profiles/instructors/index', { profile, location })
+            })
     })
 }
 
-function showStudent(req, res) {
-    Profile.findById(req.params.id).populate('instruments').populate('needs').populate('chosenInstructors').exec(function (err, student) {
-        res.render('profiles/students/index', { student })
+async function showStudent(req, res) {
+    await Profile.findById(req.params.id).populate('instruments').populate('needs').populate('chosenInstructors').exec(function (err, student) {
+        const url = fetch(`http://ziptasticapi.com/${student.location}`)
+            .then(res => res.json())
+            .then(location => {
+                res.render('profiles/students/index', { student, location })
+            })
     });
 }
 
@@ -90,14 +93,22 @@ function viewMyStudents(req, res) {
 }
 
 async function showTeacher(req, res) {
-    const student = await Profile.findOne({user: req.user._id})
+    const student = await Profile.findOne({ user: req.user._id })
     Profile.findById(req.params.id).populate('instruments').exec(function (err, instructor) {
-        res.render('profiles/instructors/show', { instructor, student })
+        const url = fetch(`http://ziptasticapi.com/${instructor.location}`)
+            .then(res => res.json())
+            .then(location => {
+                res.render('profiles/instructors/show', { instructor, student, location })
+            })
     })
 }
-function showPupil(req, res) {
-    Profile.findById(req.params.id).populate('instruments').populate('needs').exec(function (err, student) {
-        res.render('profiles/students/show', { student })
+async function showPupil(req, res) {
+    await Profile.findById(req.params.id).populate('instruments').populate('needs').exec(function (err, student) {
+        const url = fetch(`http://ziptasticapi.com/${student.location}`)
+            .then(res => res.json())
+            .then(location => {
+                res.render('profiles/students/show', { student, location })
+            })
     })
 }
 

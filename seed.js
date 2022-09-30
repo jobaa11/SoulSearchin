@@ -13,7 +13,6 @@ async function createInstruments() {
         { name: 'Saxophone' },
         { name: 'Trumpet' },
     ])
-    console.log('instruments', instruments);
 }
 
 createInstruments();

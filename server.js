@@ -11,13 +11,10 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var profilesRouter = require('./routes/profiles');
 var instrumentsRouter = require('./routes/instruments');
-
-
 
 var app = express();
 
@@ -42,7 +39,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
@@ -58,25 +54,18 @@ app.use((req, res, next) => {
 
 const isLoggedIn = require('./config/auth');
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profiles', isLoggedIn, profilesRouter);
 app.use('/instruments', isLoggedIn, instrumentsRouter);
 
-
-
-
-
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
 
   res.status(err.status || 500);
   res.render('error');

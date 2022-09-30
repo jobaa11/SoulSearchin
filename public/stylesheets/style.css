@@ -23,7 +23,6 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
- 
 }
 
 @media screen and (max-width: 576px) {
@@ -35,12 +34,10 @@ html {
 .new-head {
   background-image: url(/images/steve-harvey-QWUCeS2qVoM-unsplash.jpg), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
-  
 }
 
 .landing-head {
   background-image: url(/images/andrey-konstantinov-drir5tDCWF4-unsplash.jpg);
-
 }
 
 body {
@@ -80,7 +77,6 @@ main {
   align-items: center;
   margin: 20px;
   padding: 10px;
-  margin-top: 30px;
 }
 
 .view-instructors {
@@ -112,7 +108,6 @@ main {
   display: block;
 }
 
-
 .hire {
   display: flex;
   font-size: 28px;
@@ -131,7 +126,7 @@ main {
 }
 
 .all-instructors {
-  margin: 5px;
+  margin: 15px;
 }
 
 .contact-links>a {
@@ -150,7 +145,6 @@ main {
   justify-content: center;
   font-weight: bolder;
 }
-
 
 footer {
   display: flex;
@@ -222,7 +216,6 @@ footer {
   text-decoration: none;
 }
 
-
 .landing {
   display: grid;
   margin-top: 100px;
@@ -232,7 +225,6 @@ footer {
   justify-content: center;
   min-height: auto;
   height: 40px;
-
 }
 
 .welcome {
@@ -311,7 +303,6 @@ button {
   box-shadow: 0 0 0 0.25rem;
 }
 
-
 #show-page>div {
   display: flex;
   width: 300px;
@@ -332,7 +323,6 @@ button {
   padding: 1.75rem 2rem 2rem;
   border-radius: 40px;
   box-shadow: 0 0 0 0.25rem;
-
 }
 
 .allapp {
@@ -340,7 +330,6 @@ button {
   width: auto;
   margin: 0;
   border: 0;
-
 }
 
 .sign {
@@ -361,14 +350,12 @@ section>div {
   align-items: center;
 }
 
-
 .name-input,
 .location-input,
 #students,
 #bio {
   text-transform: capitalize;
 }
-
 
 .newInstr {
   display: grid;
@@ -385,7 +372,6 @@ section>div {
   margin-top: 10px;
 }
 
-
 #login {
   display: grid;
   flex-direction: column-reverse;
@@ -400,7 +386,6 @@ section>div {
   border: 2px;
   margin: 0;
 }
-
 
 #logo {
   height: 75px;

@@ -1,8 +1,6 @@
 <%- include('../../partials/header') %>
 
-
     <section class="show" id="show-page">
-
         <div>Name:
             <div>
                 <%= student.nickname %>
@@ -10,7 +8,9 @@
         </div>
         <div>Location:
             <div>
-                <%= student.location %>
+                <%= location.city %>
+                    <%= location.state %>,
+                        <%= location.country %>
             </div>
         </div>
         <div>Bio:
@@ -45,8 +45,8 @@
                 <%= student.interest %>
             </div>
         </div>
-        <form action="/profiles/students/<%= student._id %>?_method=DELETE" method="POST"><button class="create-remove">Remove Student</button></form>
+        <form action="/profiles/students/<%= student._id %>?_method=DELETE" method="POST"><button
+                class="create-remove">Remove Student</button></form>
     </section>
 
-
-    <%- include('../../partials/nav-footer') %>
+    <%- include('../../partials/footer') %>

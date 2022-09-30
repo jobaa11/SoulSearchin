@@ -40,7 +40,6 @@ Hear at Soul Search we allow students to find the right match for them that will
   | <h3>Home Page</h3>| <img src="https://trello.com/1/cards/62d9c7d925680b3d42c21b52/attachments/62d9c81663b4e918f03e39e9/previews/62d9c81763b4e918f03e39f9/download/HomePage_(index).JPG" width="700"/> || <h3 align="center">Portfolio Page</h3> | <img src="https://trello.com/c/Xl4P9fK9/11-teacher-user-page-show" width="700" /> |
 </details>
 
-
 <details open>
   <summary>:gear: Functionality</summary>
 
@@ -52,7 +51,6 @@ Hear at Soul Search we allow students to find the right match for them that will
 
 
 ## :computer: Technologies Used
-
 
 ![MongoDB](https://img.shields.io/badge/-MongoDB-333?style=flat&logo=mongodb)
 ![Express](https://img.shields.io/badge/-Express-333?style=flat&logo=express)
@@ -83,7 +81,6 @@ Hear at Soul Search we allow students to find the right match for them that will
     <li>Now that you have matched with your teacher/student, let the learning begin!</li>
   </ol>
 </details>
-
 
 <details>
   <summary>Trello Board</summary>

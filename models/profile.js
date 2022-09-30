@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const profileSchema = new Schema({
     nickname: String,
     isInstructor: Boolean,
@@ -13,7 +12,6 @@ const profileSchema = new Schema({
     genres: [{ type: String, enum: ['R&B', 'FUNK', 'JAZZ', 'POP', 'ROCK', 'BOSSA NOVA'] }],
     budget: {
         type: Number,
-        // required: true
     },
     skillLevel: { type: String, enum: ['Novice', 'Beginner', 'Intermediate', 'Advance', 'Virtuoso'] },
     needs: [{ type: Schema.Types.ObjectId, ref: 'Instrument' }],

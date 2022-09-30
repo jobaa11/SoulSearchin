@@ -1,7 +1,5 @@
 <%- include('../../partials/header') %>
 
-
-
     <% if (user) { %>
         <% if (profile && profile.isInstructor) { %>
             <section id="show-page">
@@ -12,7 +10,9 @@
                 </div>
                 <div>
                     <div autocapitalize="word" class="location-input">Location:
-                        <%= profile.location %>
+                        <%= location.city %>
+                            <%= location.state %>,
+                                <%= location.country %>
                     </div>
                 </div>
                 <div autocapitalize="words">
@@ -44,7 +44,6 @@
                             <% }) %>
                     </div>
                 </div>
-
                 <div> <a href="/profiles/instructor/<%= profile._id%>/students">View All Students</a>
                 </div>
                 <div>Budget:
@@ -55,11 +54,7 @@
                 <a class="update-profile-link" href="/profiles/<%= profile._id%>/edit">UPDATE PROFILE</a>
                 <a class="update-profile-link" href="/profiles/<%= profile._id%>/delete">DELETE PROFILE</a>
             </section>
-
             <% } %>
-
                 <% } %>
-
-
 
                     <%- include('../../partials/footer') %>

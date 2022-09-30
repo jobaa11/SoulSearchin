@@ -1,5 +1,4 @@
 const Profile = require('../models/profile');
-const User = require('../models/user')
 
 const nonProfileUrls = ["/logout", "/profiles/new/instructor", "/profiles/new/student","/profiles/new", '/images/LOGO.png' ];
 
