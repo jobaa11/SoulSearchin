@@ -46,7 +46,7 @@ Hear at Soul Search we allow students to find the right match for them that will
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3>Create Page</h3> | <img src="https://github.com/jobaa11/SoulSearchin/blob/main/public/images/create%20page.png" width="700"/> |
+  | <h3>Create Page</h3> | <img src="https://github.com/jobaa11/SoulSearchin/blob/main/public/images/Create%20Page.png" width="700"/> |
   | <h3 align="center">Portfolio Page</h3> | <img src="https://github.com/jobaa11/SoulSearchin/blob/main/public/images/portfolio%20page%20updated.png" width="700" /> |
 </details>
 
