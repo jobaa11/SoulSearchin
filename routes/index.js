@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const isLoggedIn = require('../config/auth');
 const Profile = require('../models/profile');
 const passport = require('passport');
 
@@ -26,7 +25,7 @@ router.get('/oauth2callback', passport.authenticate(
   {
     failureRedirect: '/landing'
   }
-), async (req, res, next) => {
+), async (req, res) => {
   const profile = await Profile.findOne({ user: req.user._id });
   if (!profile)
     return res.redirect('/profiles/new');

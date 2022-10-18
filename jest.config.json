@@ -1,0 +1,17 @@
+{
+    "coveragePathIgnorePatterns": [
+        "/node_modules/"
+    ],
+    "projects": [
+        {
+            "displayName": "first-unit-test",
+            "testMatch": [
+                "<rootDir>/bin/www",
+                "<rootDir>/routes/**/*.unit.js"
+            ]
+        }
+    ],
+    "restoreMocks": true,
+    "preset": "@shelf/jest-mongodb",
+    "testTimeout": 10000
+}
