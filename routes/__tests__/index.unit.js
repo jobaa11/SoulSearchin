@@ -30,17 +30,6 @@ describe('Get Landing page', function () {
         })
     })
 
-    describe('mock auth page', function () {
-
-        beforeEach(function(done) {
-            passportMock()
-        })
-        it('should send me to mock authorization page', async function () {
-
-        })
-    })
-
-    
     describe('Logout page', function () {
         it('should logout', async function () {
             const res = await supertest(app).get('/');
