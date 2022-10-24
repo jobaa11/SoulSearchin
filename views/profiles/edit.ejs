@@ -4,20 +4,20 @@
         <section class="allapp">
             <div class="app">
                 <label for="nickname">Edit Name:</label>
-                <input required type="text" id="nickname" name="nickname" placeholder='<%= profile.nickname %>'
+                <input required type="text" id="nickname" name="nickname" value='<%= profile.nickname %>'
                 autocapitalize="words">
                 <label for="location">Edit Location:</label>
-                <input maxlength="5" required type="text" id="location" name="location" placeholder="<%= profile.location %>"
+                <input value="<%= profile.location %>" maxlength="5" required type="text" id="location" name="location"
                      >
                 <label for="bio">Update Bio:</label>
-                <textarea required autocapitalize="on" id="bio" name="bio" cols="15"
+                <textarea  required autocapitalize="on" id="bio" name="bio" cols="15"
                     rows="10" placeholder="<%= profile.bio %>"></textarea>
             </div>
             <div class="app">
                 <label for="instruments">Update/Add Instruments:</label>
                 <select required id="instruments" name="instruments" multiple="3">
                     <% instruments.forEach(function(i) { %>
-                        <option selected value="<%= i._id %>">
+                        <option selected>
                             <%= i.name %>
                         </option>
                         <% }) %>
@@ -33,7 +33,7 @@
                 </select>
 
                 <label for="budget">Budget: (Teachers) </label>
-                <input type="number" name="budget" id="budget" placeholder="$<%= profile.budget %>/hr">
+                <input type="text" name="budget" id="budget" value="$<%= profile.budget %>/hr">
             </div>
         </section>
         <button style="margin-top: 30px" class="create-edit" type="submit">UPDATE</button> <br>
